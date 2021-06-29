@@ -140,5 +140,7 @@ def sliceString():
 
 
 if __name__ == '__main__':
-    method()
-    sliceString()
+    # method()
+    # sliceString()
+    x = "hello world"
+    print(x.find("hello"))
