@@ -138,6 +138,12 @@ def sliceString():
     print(user)
     print(domain)
 
+    email = "dipanjan.kundu@mindtcikle.com"
+    user = email.split('@')[0]
+    domain = email.split('@')[1]
+    print(user)
+    print(domain)
+
 
 if __name__ == '__main__':
     # method()

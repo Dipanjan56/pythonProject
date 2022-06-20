@@ -1,3 +1,6 @@
+import datetime
+
+
 def comparison_operator():
     a = True
     print(type(a))
@@ -54,6 +57,16 @@ def logical_operator():
         print("NOR: It didn't work")
 
 
+def get_incremented_time_stamp(days, hours, minutes):
+    today = datetime.datetime.now()
+    print(int(datetime.datetime.timestamp(today)))
+    incremented_time = today + datetime.timedelta(days=days) + datetime.timedelta(hours=hours) + datetime.timedelta(
+        minutes=minutes)
+    timestamp = datetime.datetime.timestamp(incremented_time)
+    return int(timestamp)
+
+
 if __name__ == '__main__':
     # comparison_operator()
-    logical_operator()
+    # logical_operator()
+    print(get_incremented_time_stamp(1, 1, 15))

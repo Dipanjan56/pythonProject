@@ -1,3 +1,6 @@
+import random
+
+
 def lists():
     # Initialise empty list
     l1 = []
@@ -96,6 +99,14 @@ def lists():
     list12 = [1, 2, 3, 4]
     print(list12[::-1])
 
+    # select 3 random values from a list[it can be duplicate]
+    list13 = [1, 2, 3, 4]
+    print(random.choices(list13, k=3))
+
+    # select unique random values from a list
+    list14 = [1, 2, 3, 4]
+    print(random.sample(list14, k=3))
+
 
 def tuples():
     # Its immutable data type, works similar as list : used for storing a=data for the first time and read operation
@@ -166,6 +177,11 @@ def dictionaries():
 
     # get all the items from a dictionary
     print(students.items())
+
+    # iterate over dictionaries
+    for key, value in students.items():
+        print(key)
+        print(value)
 
     # store multiple values in a key
     students = {"Alice": ["ID001", 26, "A"],
@@ -259,3 +275,4 @@ if __name__ == '__main__':
     # dictionaries()
     sets()
     frozen_sets()
+
