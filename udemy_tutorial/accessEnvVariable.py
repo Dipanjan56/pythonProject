@@ -13,4 +13,4 @@ def get_env_var(key):
 
 
 if __name__ == '__main__':
-    get_env_var('JAVA_HOME')
+    get_env_var('USER_TYPE')

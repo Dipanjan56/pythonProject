@@ -148,5 +148,10 @@ def sliceString():
 if __name__ == '__main__':
     # method()
     # sliceString()
-    x = "hello world"
-    print(x.find("hello"))
+    # x = "hello world"
+    # print(x.find("hello"))
+
+    v = "https://content-gql.mindtickle.com"
+    domain = '.mindtickle.com'
+    v = v[:v.index(domain)] + f'.staging{domain}' + v[v.index(domain):]
+    print(v)
