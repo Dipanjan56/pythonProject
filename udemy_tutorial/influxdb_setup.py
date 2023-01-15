@@ -14,10 +14,14 @@ from influxdb_client.client.write_api import SYNCHRONOUS
 # url = "https://us-west-2-1.aws.cloud2.influxdata.com/"
 #
 # client = influxdb_client.InfluxDBClient(url=url, token=token, org=org)
-client = influxdb_client.InfluxDBClient(url="http://localhost:8086", username="dipanjan56", password="Test@123")
+# client = influxdb_client.InfluxDBClient(url="http://localhost:8086", username="dipanjan56", password="Test@123")
+url = "http://influxdb2.devops-eks.mindtickle.com"
+token = "-ZDWNJKA_bJP2lPfeHmRYBKjU6Klqna8X4YhX6ZesbuKatBo3OHJXCwmji2vH999JxBMFVhQzATrSW4mwwZSww=="
+org = "Mindtickle"
+# client = influxdb_client.InfluxDBClient(url="http://influxdb2.devops-eks.mindtickle.com",
+#                                         token="-ZDWNJKA_bJP2lPfeHmRYBKjU6Klqna8X4YhX6ZesbuKatBo3OHJXCwmji2vH999JxBMFVhQzATrSW4mwwZSww==", org="Mindtickle")
+client = influxdb_client.InfluxDBClient(url=url, token=token, org=org)
 print(f"Ping Response: {client.ping()}")
-
-org = 'Mindtickle'
 bucket = "test_bucket"
 measurement = "measurement"
 

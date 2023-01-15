@@ -70,3 +70,31 @@ print(f'list after inserting the object: {num_list2}')
 # but it is not possible to insert a value at the end of the list, for that we need to use append method
 
 # -------------------------------------------------------------------
+
+# Convert a string into list
+phrase = "Don't panic!"
+plist = list(phrase)
+print(f'original string: {phrase}')
+print(f'converted list from string: {plist}')
+
+# convert "Don't panic" to "on tap" by using list methods
+plist = plist[1:8]
+plist.remove("'")
+# Swapping last two elements of a list
+plist.extend([plist.pop(), plist.pop()])
+# removing space from 3rd position and inserting it on 2nd position
+plist.insert(2, plist.pop(3))
+
+# Convert list into string
+new_phrase = ''.join(plist)
+print(f'converted string from list: {new_phrase}')
+
+# -------------------------------------------------------------------
+
+# Swap last two elements of a list
+new_list = [1, 2, 3, 4]
+print(f'original list: {new_list}')
+new_list.extend([new_list.pop(), new_list.pop()])
+print(f'list after swapping last two values: {new_list}')
+
+# -------------------------------------------------------------------
