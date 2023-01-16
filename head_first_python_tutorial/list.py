@@ -5,8 +5,12 @@
 # The object it stores are ordered sequentially in slots
 # duplicate values can be stored in a single list
 # list always enclosed with SQUARE BRACKETS
+# Python lets you access the list relative to each end,
+# i,e. positive index count start from left to right (0,1,2,...,end_index) -> for this, start_index = 0
+# and negative index count starts from right to left (-end_index,...., -3, -2, -1) -> for this, start_index = -1
+# so it is very easy to get first and last value of the list -> num_list[0] = first value, num_list[-1] = last value
 
-# example ->
+# examples ->
 num_list = [0, 1, 2, 3, 4, 5]
 # get the length of the list
 print(f'size of the list: {len(num_list)}')
@@ -109,7 +113,6 @@ print(f'after copying, first list: {l1} | second list {l2}')
 l2.append(5)
 print(f'SHALLOW COPY => after changing second list, first list: {l1} | second list {l2}')
 
-
 # 2. DEEP COPY: copying the object values from one list to another, but in this case of you change any object value
 # of any of the list, then another list will not get changed
 l1 = [1, 2, 3, 4]
@@ -121,4 +124,69 @@ print(f'DEEP COPY => after changing second list, first list: {l1} | second list 
 
 # -------------------------------------------------------------------
 
+# List Slicing
+# We can use start, stop and step inside a list -> list[start(inclusive):stop(exclusive):step]
+# default value of start is 0
+# default value of stop is the maximum value allowable for the list
+# default value of step is 1
 
+word = 'abcdefghijk'
+letters = list(word)
+print(f'original letter: {letters}')
+
+# print Every third letter(but not including) index location 10
+output = letters[0:10:3]
+print(f'print Every third letter(but not including) index location 10: {output}')
+
+# Print the word skipping first 3 letters
+output = letters[3:]
+print(f'Print the word skipping first 3 letters: {output}')
+
+# print all letters upto(but not including) index value 10
+output = letters[:10]
+print(f'print all letters upto(but not including) index value 10: {output}')
+
+# print the first 10 letters
+output = letters[:9]
+print(f'print the first 10 letters: {output}')
+
+# print the last 5 letters
+output = letters[-5:]
+print(f'print the last 5 letters: {output}')
+
+# reverse the list
+output = letters[::-1]
+# here start and stop are defaulted, i.e. start_index = 0, stop_index = max value
+print(f'reverse the list: {output}')
+# converting list into string
+output_string = ''.join(output)
+
+# print every third letter including first one
+output = letters[::2]
+print(f'print every third letter including first one: {output}')
+
+# Covert "Don't Panic!" to "on tap" using slicing
+s = "Don't panic"
+print(f'original string: {s}')
+l = list(s)
+new_s = ''.join(l[1:3]) + ''.join([l[5], l[4], l[7], l[6]])
+print(f'converted string: {new_s}')
+
+# NOTE: If you want to change the original list in runtime, then use all the 5 list methods
+# but if you want the original list not get impacted/altered in runtime, then use list slicing.
+
+
+# -------------------------------------------------------------------
+
+# list : for loop
+
+num_list = [1, 2, 3, 4, 5]
+
+for num in num_list:
+    print(num)
+
+s = 'abcde'
+s_list = list(s)
+
+for char in s_list:
+    print(char)
