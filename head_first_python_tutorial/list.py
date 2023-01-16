@@ -98,3 +98,27 @@ new_list.extend([new_list.pop(), new_list.pop()])
 print(f'list after swapping last two values: {new_list}')
 
 # -------------------------------------------------------------------
+
+# copying a list can be done by two ways:
+# 1. SHALLOW COPY: copying he reference of the first list, but in this case of you change any object value of any of the
+# list, then both the list will be changed
+l1 = [1, 2, 3, 4]
+l2 = l1
+
+print(f'after copying, first list: {l1} | second list {l2}')
+l2.append(5)
+print(f'SHALLOW COPY => after changing second list, first list: {l1} | second list {l2}')
+
+
+# 2. DEEP COPY: copying the object values from one list to another, but in this case of you change any object value
+# of any of the list, then another list will not get changed
+l1 = [1, 2, 3, 4]
+l2 = l1.copy()
+
+print(f'after copying, first list: {l1} | second list {l2}')
+l2.append(5)
+print(f'DEEP COPY => after changing second list, first list: {l1} | second list {l2}')
+
+# -------------------------------------------------------------------
+
+
