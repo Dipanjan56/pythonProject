@@ -1,4 +1,5 @@
 # list: an ordered mutable collection of objects -> it is dynamic, mutable and heterogeneous in nature
+# lis is initialised by []
 # dynamic -> it can grow and hrink in runtime
 # mutable -> you can change a list at anytime by adding, removing or changing objects
 # heterogeneous -> you do not need to predeclare the type of the object you are storing and also you can mix'n'match different tyoe of objects in one list
@@ -190,3 +191,13 @@ s_list = list(s)
 
 for char in s_list:
     print(char)
+
+
+# -------------------------------------------------------------------
+
+# Sort a list: use 'sorted()' function
+
+num_list = [5, 3, 1, 2, 4]
+print(f'list before sorting: {num_list}')
+num_list = sorted(num_list)
+print(f'list after sorting: {num_list}')
