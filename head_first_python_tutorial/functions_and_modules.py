@@ -64,6 +64,7 @@ def search_vowels_2(word):
 print(search_vowels_2('hello'))
 print(search_vowels_2('sky'))
 
+
 # -----------------------------------------
 
 # we can define the type of argument and return type by using annotations
