@@ -1,3 +1,10 @@
+# input from console/ user input
+
+word = input('Provide a word: ')
+print(word)
+
+# -----------------------------------------
+
 # if else
 
 y = 5

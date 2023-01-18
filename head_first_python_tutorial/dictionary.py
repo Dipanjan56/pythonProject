@@ -1,15 +1,21 @@
 # Dictionary id used to hold key/value pairs
-# empty dictionary is initialised by {}
+# empty dictionary is initialised by CURLY BRACES: {}
+
 # the key part of dictionary is typically a string and the value part can be any Python object
 # but keys and values dont have to be strings forever
+
 # In dictionary, insertion order is not maintained, so Unlike lists, which keep your objects arranged in the order
 # in which you inserted them, dictionary does not.
+
 # you have to initialise dictionary like this:  dict = {'a': 0, 'e': 0, 'i': 0, 'o': 0, 'u': 0} so that we can use this
 # key value in runtime but there is a method 'setdefault()' which ease our initialisation at runtime
 # setdefault(): setdefault()'s usage guarantees that a key is always initialised to a starter value at runtime and
 # any possibility of 'KeyError' exception is avoided and
 # you never need to spend time initialising all your rows of dictionary data ahead of time
 
+# you can print the complex dictionary output in pretty format using pprint module
+
+import pprint
 
 # -----------------------------------------
 
@@ -19,7 +25,11 @@ person1 = {'Name': 'Dipanjan', 'Gender': 'Male', 'Occupation': 'SDET', 'Planet':
 print(person1)
 
 # Initialise empty dictionary
+# method 1
 empty_dict = {}
+
+# method 2
+empty_dict2 = dict()
 
 # -----------------------------------------
 
@@ -118,3 +128,13 @@ for key, value in sorted(letter_dict.items()):
     print(f'\t{key} : {value}')
 
 # -----------------------------------------
+
+# pretty printing dictionary
+
+person1 = {'Name': 'Dipanjan', 'Gender': 'Male', 'Occupation': 'SDET', 'Planet': 'Earth'}
+person2 = {'Name': 'Namrata', 'Gender': 'FeMale', 'Occupation': 'HR', 'Planet': 'Earth'}
+
+person_dict = {'Dipanjan': person1, 'Namrata': person2}
+
+print('pretty printing of dictionary: \n')
+pprint.pprint(person_dict)

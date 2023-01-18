@@ -1,17 +1,39 @@
 # list: an ordered mutable collection of objects -> it is dynamic, mutable and heterogeneous in nature
-# lis is initialised by []
-# dynamic -> it can grow and hrink in runtime
+# empty list is initialised by SQUARE BRACKETS []
+
+# dynamic -> it can grow and shrink in runtime
 # mutable -> you can change a list at anytime by adding, removing or changing objects
-# heterogeneous -> you do not need to predeclare the type of the object you are storing and also you can mix'n'match different tyoe of objects in one list
+# heterogeneous -> you do not need to pre-declare the type of the object you are storing and
+# also you can mix'n'match different tyoe of objects in one list
 # The object it stores are ordered sequentially in slots
 # duplicate values can be stored in a single list
 # list always enclosed with SQUARE BRACKETS
+
 # Python lets you access the list relative to each end,
 # i,e. positive index count start from left to right (0,1,2,...,end_index) -> for this, start_index = 0
 # and negative index count starts from right to left (-end_index,...., -3, -2, -1) -> for this, start_index = -1
 # so it is very easy to get first and last value of the list -> num_list[0] = first value, num_list[-1] = last value
 
 # examples ->
+
+# initialise empty list
+l1 = []
+print(f'empty list: {l1}')
+
+l2 = list()
+print(f'empty list: {l2}')
+
+# initialise list with values
+l3 = [1, 2, 3, 2, 5, 2, 4, 4, 7]
+print(f'list with values: {l3}')
+
+# initialise list using shorthand for string objects
+l4 = list('abcdef')
+print(f'list using shorthand: {l4}')
+
+
+# -----------------------------------------
+
 num_list = [0, 1, 2, 3, 4, 5]
 # get the length of the list
 print(f'size of the list: {len(num_list)}')
