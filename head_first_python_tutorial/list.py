@@ -4,7 +4,7 @@
 # dynamic -> it can grow and shrink in runtime
 # mutable -> you can change a list at anytime by adding, removing or changing objects
 # heterogeneous -> you do not need to pre-declare the type of the object you are storing and
-# also you can mix'n'match different tyoe of objects in one list
+# also you can mix'n'match different type of objects in one list
 # The object it stores are ordered sequentially in slots
 # duplicate values can be stored in a single list
 # list always enclosed with SQUARE BRACKETS
@@ -30,7 +30,6 @@ print(f'list with values: {l3}')
 # initialise list using shorthand for string objects
 l4 = list('abcdef')
 print(f'list using shorthand: {l4}')
-
 
 # -----------------------------------------
 
@@ -61,7 +60,7 @@ print(f'list after appending duplicate value: {num_list}')
 # -------------------------------------------------------------------
 
 # remove(object value): removes the first occurrence of the object value
-num_list.remove(6)
+num_list.remove()
 print(f'list after removing value: {num_list}')
 
 # -------------------------------------------------------------------
@@ -214,7 +213,6 @@ s_list = list(s)
 for char in s_list:
     print(char)
 
-
 # -------------------------------------------------------------------
 
 # Sort a list: use 'sorted()' function
@@ -223,3 +221,44 @@ num_list = [5, 3, 1, 2, 4]
 print(f'list before sorting: {num_list}')
 num_list = sorted(num_list)
 print(f'list after sorting: {num_list}')
+
+# -------------------------------------------------------------------
+
+# list_comprehension {template}: [expression for val in collection if <test> and <test2>]
+# example:
+
+# square all the list number from 1 to 10
+
+# general syntax
+
+squares = []
+for i in range(1, 11):
+    squares.append(i ** 2)
+
+print(f'num list in general syntax: {squares}')
+
+# list_comprehension syntax:
+
+squares2 = [i ** 2 for i in range(1, 11)]
+print(f'num list in list_comprehension: {squares}')
+
+# print all substrings
+
+s = 'abcde'
+s_list = []
+# general syntax
+for i in range(0, len(s)):
+    for j in range(i + 1, len(s) + 1):
+        sub_string = s[i:j]
+        s_list.append(sub_string)
+
+print(f'substring with general syntax: {s_list}')
+
+# list comprehension
+
+s_list2 = [s[i:j] for i in range(0, len(s)) for j in range(i + 1, len(s) + 1)]
+print(f'substring with list comprehension: {s_list2}')
+
+# print all substrings starts with a
+s_list3 = [s[i:j] for i in range(0, len(s)) for j in range(i + 1, len(s) + 1) if s[i:j].startswith('a')]
+print(f'substring starts with "a" with list comprehension: {s_list3}')

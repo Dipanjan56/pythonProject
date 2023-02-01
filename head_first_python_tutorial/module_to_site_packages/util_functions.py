@@ -32,3 +32,14 @@ def search_vowels_4(word: str) -> bool:
     vowels = set('aeiou')
     found = vowels.intersection(set(word))
     return bool(found)
+
+
+# using multiple argument
+# search for letters in a given phrase
+
+def search4letters(phrase: str, letters: str):
+    """Return a set of the 'letters' found in 'phrase'"""
+    return sorted(set(phrase).intersection(set(letters)))
+
+
+print(search4letters('Paranoid Android', 'aeiou'))
