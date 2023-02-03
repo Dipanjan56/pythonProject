@@ -1,6 +1,6 @@
 # self is an alias to the object [like 'this' keyword in java]
 # dunder '__' provide hooks into every class's standard behavior
-# object class is parent calss to all the classes in python
+# object class is parent class to all the classes in python
 # hence all the dunder methods provided by objects are available to your classes to use or overwrite it,
 # all these dunder method are known as 'magic method'
 
