@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, redirect, escape
+from flask import Flask, render_template, request, session
 from util_functions import search4letters
 from head_first_python_tutorial.Context_Manager.DBcm import UseDatabase
+from checker import check_logged_in
 
 # Steps to configure MariaDB(mysql Database)
 # see verach4web_logDB_1.py module
@@ -24,6 +25,20 @@ Context management protocol =>
 
 app = Flask(__name__)
 
+app.secret_key = 'VeryHardToGuess'
+
+
+@app.route('/login')
+def do_login() -> str:
+    session['logged_in'] = True
+    return 'You are now logged in'
+
+
+@app.route('/logout')
+def do_logout() -> str:
+    session.pop('logged_in')
+    return 'You are now logged out'
+
 
 def log_request(req: 'flask_request', res: str) -> None:
     """Log details of the web request and the results."""
@@ -46,6 +61,7 @@ def log_request(req: 'flask_request', res: str) -> None:
 
 
 @app.route('/search4', methods=['POST'])
+@check_logged_in
 def do_search() -> 'html':
     """Extract the posted data; perform the search; return results."""
     phrase = request.form['phrase']
@@ -62,6 +78,7 @@ def do_search() -> 'html':
 
 @app.route('/')
 @app.route('/entry')
+@check_logged_in
 def entry_page() -> 'html':
     """Display this webapp's HTML form."""
     return render_template('entry.html',
@@ -69,6 +86,7 @@ def entry_page() -> 'html':
 
 
 @app.route('/viewlog')
+@check_logged_in
 def view_the_log() -> 'html':
     """Display the contents of the log file as a HTML table."""
     with UseDatabase(app.config['dbconfig']) as cursor:

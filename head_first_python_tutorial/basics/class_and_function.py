@@ -3,6 +3,7 @@
 # object class is parent class to all the classes in python
 # hence all the dunder methods provided by objects are available to your classes to use or overwrite it,
 # all these dunder method are known as 'magic method'
+# all functions are objects and they have unique id
 
 class CountFromBy:
     def __init__(self, v: int = 0, i: int = 1) -> None:
