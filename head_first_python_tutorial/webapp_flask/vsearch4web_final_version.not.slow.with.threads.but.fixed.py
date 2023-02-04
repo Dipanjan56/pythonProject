@@ -1,6 +1,6 @@
 from time import sleep
 from threading import Thread
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, copy_current_request_context
 from util_functions import search4letters
 from head_first_python_tutorial.Context_Manager.DBcm import UseDatabase, ConnectionError, CredentialsError, SQLError
 from checker import check_logged_in
@@ -30,25 +30,33 @@ def do_logout() -> str:
     return 'You are now logged out'
 
 
-def log_request(req: 'flask_request', res: str) -> None:
-    """Log details of the web request and the results."""
-
-    # raise Exception("Something awful just happened.")
-    sleep(15)
-    with UseDatabase(app.config['dbconfig']) as cursor:
-        _SQL = """insert into log
-                  (phrase, letters, ip, browser_string, results)
-                  values
-                  (%s, %s, %s, %s, %s)"""
-        cursor.execute(_SQL, (req.form['phrase'],
-                              req.form['letters'],
-                              req.remote_addr,
-                              'chrome',
-                              res,))
-
-
 @app.route('/search4', methods=['POST'])
 def do_search() -> 'html':
+    """
+    copy_current_request_context is a decorator given by flask, it ensures that the http request that is active
+    when a function is called remains active even when the function is subsequently executed in a thread
+
+    But the caveat is: the function being decorated has to be defined within the function that calls it,
+    the decorated function must be nested inside its caller (as an inner function)
+    """
+
+    @copy_current_request_context
+    def log_request(req: 'flask_request', res: str) -> None:
+        """Log details of the web request and the results."""
+
+        # raise Exception("Something awful just happened.")
+        sleep(15)
+        with UseDatabase(app.config['dbconfig']) as cursor:
+            _SQL = """insert into log
+                      (phrase, letters, ip, browser_string, results)
+                      values
+                      (%s, %s, %s, %s, %s)"""
+            cursor.execute(_SQL, (req.form['phrase'],
+                                  req.form['letters'],
+                                  req.remote_addr,
+                                  'chrome',
+                                  res,))
+
     """Extract the posted data; perform the search; return results."""
     phrase = request.form['phrase']
     letters = request.form['letters']
@@ -58,7 +66,9 @@ def do_search() -> 'html':
          not on the webpage
          """
     try:
-        log_request(request, results)
+        # log_request(request, results)
+        t = Thread(target=log_request, args=(request, results))
+        t.start()
     except Exception as err:
         print('***** Logging failed with this error:', str(err))
     return render_template('results.html',
