@@ -224,7 +224,9 @@ print(f'list after sorting: {num_list}')
 
 # -------------------------------------------------------------------
 
-# list_comprehension {template}: [expression for val in collection if <test> and <test2>]
+"""list_comprehension {template}: [expression for val in collection if <test> and <test2>]
+list comprehension is faster than teh normal for loop
+"""
 # example:
 
 # square all the list number from 1 to 10
