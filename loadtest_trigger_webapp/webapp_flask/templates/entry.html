@@ -8,11 +8,11 @@
     <table>
         <p>Use this form to trigger the load test using locust:</p>
         <tr>
-            <td>TC_ID:</td>
+            <td><b>TC_ID:</b></td>
             <td><input name='tc_id' type='number' min="1" width='15'></td>
         </tr>
         <tr>
-            <td>Track:</td>
+            <td><b>Track:</b></td>
             <td><label for="track"></label>
                 <select id="track" name="track">
                     <option value="prod">prod</option>
@@ -21,7 +21,7 @@
                 </select></td>
         </tr>
         <tr>
-            <td>Cluster:</td>
+            <td><b>Cluster:</b></td>
             <td><label for="cluster"></label>
                 <select id="cluster" name="cluster">
                     <option value="prod-us" selected>prod-us</option>
@@ -30,7 +30,7 @@
                 </select></td>
         </tr>
         <tr>
-            <td>HISTORICAL_TRACKING:</td>
+            <td><b>Historical Tracking:</b></td>
             <td><label for="historical_tracking"></label>
                 <select id="historical_tracking" name="historical_tracking">
                     <option value="False" selected>False</option>
@@ -38,16 +38,27 @@
                 </select></td>
         </tr>
         <tr>
-            <td>BASELINE_TEST:</td>
+            <td><b>Baseline Test:</b></td>
             <td><label for="baseline_test"></label>
                 <select id="baseline_test" name="baseline_test">
                     <option value="False" selected>False</option>
                     <option value="True">True</option>
                 </select></td>
         </tr>
+        <tr>
+            <td><b>Reminder Count:</b></td>
+            <td><input name='reminder_count' type='number' min="0"></td>
+        </tr>
+        <tr>
+            <td><b>Interval (in minutes):</b></td>
+            <td><input name='interval' type='number' min="0"></td>
+        </tr>
+        <tr>
+            <td><b>Start Time:</b></td>
+            <td><input name='start_time' type='datetime-local'></td>
+        </tr>
     </table>
-    <p>When you're ready, click this button:</p>
-    <p><input value='Do it!' type='SUBMIT'></p>
+    <p>When you're ready, click this button: </b><input value='Do it!' type='SUBMIT'></p>
 </form>
 
 {% endblock %}
