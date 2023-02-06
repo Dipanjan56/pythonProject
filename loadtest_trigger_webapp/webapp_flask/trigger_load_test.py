@@ -17,7 +17,10 @@ def trigger_message_to_slack(cluster, message):
             "thread_ts": ""
         }
     }
-    resp = postCall_without_auth(slack_url, payload)
+    try:
+        resp = postCall_without_auth(slack_url, payload)
+    except Exception as err:
+        raise Exception(f'Error while sending message via slack: {str(err)}')
     print(
         f'Successfully triggered slack message for load test completion | SLACK_CHANNEL: {slack_channel}')
 
@@ -31,7 +34,7 @@ def do_trigger() -> 'html':
     historical_tracking = request.form['historical_tracking'].lower()
     baseline_test = request.form['baseline_test'].lower()
     title = 'Here are your results:'
-    command = f'@baymax -bd mindtickle-performance-testing-locust -e TC_ID={tc_id},LOCUST_TRACK={track},HISTORICAL_TRACKING={historical_tracking},BASELINE_TEST={baseline_test}'
+    command = f'<@baymax> -bd mindtickle-performance-testing-locust -e TC_ID={tc_id},LOCUST_TRACK={track},HISTORICAL_TRACKING={historical_tracking},BASELINE_TEST={baseline_test}'
     trigger_message_to_slack(cluster, message=command)
     return render_template('results.html',
                            the_title=title,
@@ -40,7 +43,7 @@ def do_trigger() -> 'html':
                            the_cluster=cluster,
                            the_historical_tracking=historical_tracking,
                            the_baseline_test=baseline_test,
-                           the_command=command, )
+                           the_command=command.replace('<', '').replace('>', ''), )
 
 
 @app.route('/')
