@@ -34,6 +34,7 @@ s and p consist of lowercase English letters."""
 
 """This is my solution, not the optimized one"""
 
+
 def findAnagrams(s: str, p: str):
     if len(s) < len(p):
         return []

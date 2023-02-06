@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ the_title }}</h2>
+
+<p>You submitted the following data:</p>
+<table>
+    <tr>
+        <td>TC_ID:</td>
+        <td>{{ the_tc_id }}</td>
+    </tr>
+    <tr>
+        <td>Track:</td>
+        <td>{{ the_track }}</td>
+    </tr>
+    <tr>
+        <td>Cluster:</td>
+        <td>{{ the_cluster }}</td>
+    </tr>
+    <tr>
+        <td>HISTORICAL_TRACKING:</td>
+        <td>{{ the_historical_tracking }}</td>
+    </tr>
+    <tr>
+        <td>BASELINE_TEST:</td>
+        <td>{{ the_baseline_test }}</td>
+    </tr>
+</table>
+
+<p>Voila! load test has been triggered successgully: </p>
+<h3>Slack Channel: track_{{ the_cluster }}</h3>
+<h3>Command: {{ the_command }}</h3>
+
+{% endblock %}
