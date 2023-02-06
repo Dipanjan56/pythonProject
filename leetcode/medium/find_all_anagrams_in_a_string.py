@@ -31,32 +31,34 @@ Constraints:
 
 1 <= s.length, p.length <= 3 * 104
 s and p consist of lowercase English letters."""
+from collections import Counter
 
-"""This is my solution, not the optimized one"""
+"""This is the optimized one"""
+"""Solution: use sliding window approach and make use of Counter ds from collections library
+What is Counter?
+Counter is an unordered collection where elements are stored as Dict keys and their count as dict value. 
+Counter elements count can be positive, zero or negative integers. However there is no restriction on it’s keys 
+and values. Although values are intended to be numbers but we can store other objects too.
+"""
 
 
 def findAnagrams(s: str, p: str):
     if len(s) < len(p):
         return []
     anagram_length = len(p)
-    possible_anagram_list = []
+    anagram_counter = Counter(p)
+    index_list = []
     for i in range(0, len(s)):
         j = i + anagram_length
         if len(s[i:j]) == anagram_length:
-            possible_anagram_list.append(s[i:j])
-    print(possible_anagram_list)
-
-    index_list = []
-    for index in range(0, len(possible_anagram_list)):
-        substring = sorted(possible_anagram_list[index])
-        sorted_anagram = sorted(p)
-        if substring == sorted_anagram:
-            index_list.append(index)
+            s_counter = Counter(s[i:j])
+            if anagram_counter == s_counter:
+                index_list.append(i)
 
     print(index_list)
 
 
 if __name__ == '__main__':
-    s = "baa"
-    p = "aa"
+    s = "cbaebabacd"
+    p = "abc"
     findAnagrams(s, p)
