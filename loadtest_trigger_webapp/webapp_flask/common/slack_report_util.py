@@ -1,4 +1,4 @@
-from loadtest_trigger_webapp.webapp_flask.api_requests_http import postCall_without_auth
+from loadtest_trigger_webapp.webapp_flask.common.api_requests_http import postCall_without_auth
 from common.util_helper import UtilHelper
 
 

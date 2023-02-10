@@ -1,64 +1,70 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<div style="text-align: center;">
 
-<h2>{{ the_title }}</h2>
+    <h2>{{ the_title }}</h2>
 
-<form method='POST' action='/load_test/trigger_command'>
-    <table>
-        <p>Use this form to trigger the load test using locust:</p>
-        <tr>
-            <td><b>TC_ID:</b></td>
-            <td><input name='tc_id' type='number' min="1" width='15'></td>
-        </tr>
-        <tr>
-            <td><b>Track:</b></td>
-            <td><label for="track"></label>
-                <select id="track" name="track">
-                    <option value="prod">prod</option>
-                    <option value="staging" selected>staging</option>
-                    <option value="integration">integration</option>
-                </select></td>
-        </tr>
-        <tr>
-            <td><b>Cluster:</b></td>
-            <td><label for="cluster"></label>
-                <select id="cluster" name="cluster">
-                    <option value="prod-us" selected>prod-us</option>
-                    <option value="staging">staging</option>
-                    <option value="integration">integration</option>
-                </select></td>
-        </tr>
-        <tr>
-            <td><b>Historical Tracking:</b></td>
-            <td><label for="historical_tracking"></label>
-                <select id="historical_tracking" name="historical_tracking">
-                    <option value="False" selected>False</option>
-                    <option value="True">True</option>
-                </select></td>
-        </tr>
-        <tr>
-            <td><b>Baseline Test:</b></td>
-            <td><label for="baseline_test"></label>
-                <select id="baseline_test" name="baseline_test">
-                    <option value="False" selected>False</option>
-                    <option value="True">True</option>
-                </select></td>
-        </tr>
-        <tr>
-            <td><b>Reminder Count:</b></td>
-            <td><input name='reminder_count' type='number' min="0"></td>
-        </tr>
-        <tr>
-            <td><b>Interval (in minutes):</b></td>
-            <td><input name='interval' type='number' min="0"></td>
-        </tr>
-        <tr>
-            <td><b>Start Time:</b></td>
-            <td><input name='start_time' type='datetime-local'></td>
-        </tr>
-    </table>
-    <p>When you're ready, click this button: </b><input value='Do it!' type='SUBMIT'></p>
-</form>
+    <form method='POST' action='/load_test/trigger_command'>
+        <table style="margin: 0 auto">
+            <p>Use this form to trigger the load test using locust:</p>
+            <tr>
+                <td><b>TC_ID:</b></td>
+                <td><input name='tc_id' type='number' min="1" width='15'></td>
+            </tr>
+            <tr>
+                <td><b>Target Env:</b></td>
+                <td><label for="track"></label>
+                    <select id="track" name="track">
+                        <option value="prod">prod</option>
+                        <option value="staging" selected>staging</option>
+                        <option value="integration">integration</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td><b>Pod Cluster:</b></td>
+                <td><label for="cluster"></label>
+                    <select id="cluster" name="cluster">
+                        <option value="prod-us" selected>prod-us</option>
+                        <option value="staging">staging</option>
+                        <option value="integration">integration</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td><b>Historical Tracking:</b></td>
+                <td><label for="historical_tracking"></label>
+                    <select id="historical_tracking" name="historical_tracking">
+                        <option value="False" selected>False</option>
+                        <option value="True">True</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td><b>Baseline Test:</b></td>
+                <td><label for="baseline_test"></label>
+                    <select id="baseline_test" name="baseline_test">
+                        <option value="False" selected>False</option>
+                        <option value="True">True</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td><b>Iteration Count:</b></td>
+                <td><input name='reminder_count' type='number' min="0"></td>
+            </tr>
+            <tr>
+                <td><b>Interval (in minutes):</b></td>
+                <td><input name='interval' type='number' min="0"></td>
+            </tr>
+            <tr>
+                <td><b>Start Time:</b></td>
+                <td><input name='start_time' type='datetime-local'></td>
+            </tr>
+        </table>
+        <p>When you're ready, click this button: </b><input value='Do it!' type='SUBMIT'></p>
+    </form>
+    <p></b><a href='/logout'>
+            <button style="background-color: orange">Logout</button>
+        </a></p>
+</div>
+
 
 {% endblock %}

@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 app.secret_key = 'VeryHardToGuess'
 
+
 @app.route('/login')
 def do_login() -> str:
     session['logged_in'] = True

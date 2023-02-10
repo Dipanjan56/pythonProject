@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms Input Types</title>
+</head>
+<body>
+<form action="other.html">
+    <p>Are you inside or Outside of India?</p>
+    <label for="in">Inside: </label>
+    <input type="radio" id="in" name="loc" value="in">
+
+    <! to enable selecting one radio button give same name input tag>
+
+    <label for="out">Outside: </label>
+    <input type="radio" id="out" name="loc" value="out">
+
+    <p>How was your service?</p>
+    <select name="stars" id="dropdown">
+        <option value="Great">3</option>
+        <option value="Ok">2</option>
+        <option value="Bad">1</option>
+    </select>
+
+    <p>Any other comments?</p>
+
+    <textarea name="" id="comments" cols="30" rows="10"></textarea>
+
+    <br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

@@ -35,6 +35,8 @@ Simple example usage:
         data = cursor.fetchall()
 
 Enjoy, and have fun.  (Sorry: Python 3 only, due to type hints and new syntax).
+
+To start the mysql server locally: mysql.server start
 """
 
 ##############################################################################
