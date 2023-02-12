@@ -23,7 +23,7 @@ Start new Project:
 
 
 Start new App:
-terminal -> cd /my_site-> cd  python3 manage.py startapp my_app
+terminal -> cd /my_site-> python3 manage.py startapp my_app
 
 Run App:
 terminal ->  python3 manage.py runserver
