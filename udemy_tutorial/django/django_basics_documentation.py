@@ -32,16 +32,18 @@ terminal ->  python3 manage.py runserver
 
 Step 5
 Database creation and integration:
-it will create db.sqllite3 in your project and
-make migration for installed apps/ tables in DB in settings.py with project level:
-terminal ->  python3 manage.py migrate
+it will create migration instruction in project level
+terminal ->  python3 manage.py makemigrations third_app
 
-Step 6
+Step 6:
+it will carry out the instruction and will create db.sqllite3 in your project and
+make migration for installed apps/ tables in DB in settings.py with project level:
+terminal -> python3 manage.py migrate
+
+Step 7
 add go to apps.py in app level and copy th class_name : e.g ThirdAppConfig
 then add like this 'third_app.apps.ThirdAppConfig' in installed_apps in project level settings.py
 
-Step 7
-terminal -> python3 manage.py makemigrations third_app
 
 
 Note:
