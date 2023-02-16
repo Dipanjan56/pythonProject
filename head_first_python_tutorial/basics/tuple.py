@@ -29,7 +29,7 @@ print(f'single_str_tuple: {single_str_tuple} | type: {type(single_str_tuple)}')
 single_num_tuple = (1)
 print(f'single_num_tuple: {single_num_tuple} | type: {type(single_num_tuple)}')
 
-# initialise single object tuple[with comma]: it will not create a tuple, it will create the object we store
+# initialise single object tuple[with comma]: it will create a tuple, not the object we store
 
 single_str_tuple = ('a',)
 print(f'single_str_tuple: {single_str_tuple} | type: {type(single_str_tuple)}')

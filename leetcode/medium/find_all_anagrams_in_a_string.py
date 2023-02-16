@@ -49,6 +49,7 @@ def findAnagrams(s: str, p: str):
         return []
     anagram_length = len(p)
     anagram_counter = Counter(p)
+    # print(anagram_counter)
     index_list = []
     for i in range(0, len(s)):
         j = i + anagram_length

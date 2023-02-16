@@ -1,7 +1,7 @@
 """
 Function Decorator: It adjusts the behavior of an existing function without changing the function's original code
 It means, decorator allows you to take some existing code and augment it with additional behavior if needed
-Decorator can be applied to classes an functions, although they are mainly applied to functions and primarily called
+Decorator can be applied to classes and functions, although they are mainly applied to functions and primarily called
 as 'function decorators'
 # function decorator is always prefixed with @, e.g: @app.route('/').
 

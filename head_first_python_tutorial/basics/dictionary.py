@@ -33,9 +33,21 @@ empty_dict2 = dict()
 
 # -----------------------------------------
 
+# add key-value in a dict
+
+person1['Address'] = 'Pune'
+
+# -----------------------------------------
+
+# delete key-value in a dict
+
+person1.pop('Address')
+
+# -------------------------------
+
 # access values associated with the keys by using square bracket []
 value = person1['Name']
-print(f'access vaues according to the keys: {value}')
+print(f'access values according to the keys: {value}')
 
 # -----------------------------------------
 
@@ -63,7 +75,7 @@ for key in person1.keys():
 
 # -----------------------------------------
 
-# Iterate over a dictionary with keys only
+# Iterate over a dictionary with values only
 
 print('\nIterate over a dictionary with values only: \n')
 for value in person1.values():

@@ -3,7 +3,7 @@
 
 # In python variables are not like the variables like other programming languages,
 # here variable means object reference, i.e. it is useful to think of the value stored in the variable as being the
-# memory address of the value, not its actual value. Its the memory address that passed into the funtion,
+# memory address of the value, not its actual value. Its the memory address that passed into the function,
 # not the actual value
 # Hence, Python's function support what's ,ore correctly called call-by-reference call semantics
 

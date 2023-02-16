@@ -164,8 +164,8 @@ It is much more like list comprehension and generates the same output
 although its working mechanism is different than list comprehension 
 
 listcomp produces all of its data prior to any other processing occuring, 
-image your list comp is required to work with 10 million data, then
-you have two bis issues: 
+imagine your list comp is required to work with 10 million data, then
+you have two big issues: 
 1. you have to wait for the listcomp to process
 those 10 million data items before doing anything else
 2. you have to worry about RAM to hold 10 million data processing

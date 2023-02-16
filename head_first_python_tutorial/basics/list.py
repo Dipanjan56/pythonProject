@@ -60,7 +60,7 @@ print(f'list after appending duplicate value: {num_list}')
 # -------------------------------------------------------------------
 
 # remove(object value): removes the first occurrence of the object value
-num_list.remove()
+num_list.remove(2)
 print(f'list after removing value: {num_list}')
 
 # -------------------------------------------------------------------
