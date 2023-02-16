@@ -60,3 +60,15 @@ print(f'if else: x = {x}, y = {y}')
 x = 10 if y > 6 else 20
 
 print(f'if else using ternary operator: x = {x}, y = {y}')
+
+
+# -----------------------------------------
+
+# palindrome
+
+s = 'abc'
+print(f'{s} | {s[::-1]}')
+if s == s[::-1]:
+    print(f'{s} is Palindrome')
+else:
+    print(f'{s} is not  Palindrome')

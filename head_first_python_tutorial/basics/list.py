@@ -224,6 +224,12 @@ print(f'list after sorting: {num_list}')
 
 # -------------------------------------------------------------------
 
+# swap two numbers
+
+nums = [1, 2, 3]
+nums[1], nums[2] = nums[2], nums[1]
+print(nums)
+
 """list_comprehension {template}: [expression for val in collection if <test> and <test2>]
 list comprehension is faster than teh normal for loop
 """
