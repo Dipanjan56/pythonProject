@@ -2,50 +2,58 @@
 
 {% block body %}
 
-<h2>{{ the_title }}</h2>
+<div style="text-align: center; background: mediumseagreen">
+    <h2>{{ the_title }}</h2>
+    <h3>You submitted the following data:</h3>
+    <table style="margin: 0 auto; text-align: left">
+        <tr>
+            <td>TC_ID:</td>
+            <td>{{ the_tc_id }}</td>
+        </tr>
+        <tr>
+            <td>Track:</td>
+            <td>{{ the_track }}</td>
+        </tr>
+        <tr>
+            <td>Cluster:</td>
+            <td>{{ the_cluster }}</td>
+        </tr>
+        <tr>
+            <td>HISTORICAL_TRACKING:</td>
+            <td>{{ the_historical_tracking }}</td>
+        </tr>
+        <tr>
+            <td>BASELINE_TEST:</td>
+            <td>{{ the_baseline_test }}</td>
+        </tr>
+        <tr>
+            <td>reminder_count:</td>
+            <td>{{ the_reminder_count }}</td>
+        </tr>
+        <tr>
+            <td>interval:</td>
+            <td>{{ the_interval }}</td>
+        </tr>
+        <tr>
+            <td>start_time:</td>
+            <td>{{ the_start_time }}</td>
+        </tr>
+    </table>
 
-<p>You submitted the following data:</p>
-<table>
-    <tr>
-        <td>TC_ID:</td>
-        <td>{{ the_tc_id }}</td>
-    </tr>
-    <tr>
-        <td>Track:</td>
-        <td>{{ the_track }}</td>
-    </tr>
-    <tr>
-        <td>Cluster:</td>
-        <td>{{ the_cluster }}</td>
-    </tr>
-    <tr>
-        <td>HISTORICAL_TRACKING:</td>
-        <td>{{ the_historical_tracking }}</td>
-    </tr>
-    <tr>
-        <td>BASELINE_TEST:</td>
-        <td>{{ the_baseline_test }}</td>
-    </tr>
-    <tr>
-        <td>reminder_count:</td>
-        <td>{{ the_reminder_count }}</td>
-    </tr>
-    <tr>
-        <td>interval:</td>
-        <td>{{ the_interval }}</td>
-    </tr>
-    <tr>
-        <td>start_time:</td>
-        <td>{{ the_start_time }}</td>
-    </tr>
-</table>
+    <p></p>
+    <h4>Voila! load test has been triggered successfully</h4>
+    <p></p>
+    <h3>Slack Channel:</h3>
+    <p>track_{{ the_cluster }}</p>
+    <h4>Command: </h4>
+    <p>{{ the_command }}</p>
 
-<p>Voila! load test has been triggered successfully: </p>
-<h3>Slack Channel: track_{{ the_cluster }}</h3>
-<h3>Command: {{ the_command }}</h3>
+</div>
 
-<p></b><a href='/logout'>
-    <button>Logout</button>
-</a></p>
+<div style="text-align: center;">
+    <p></b><a href='/logout'>
+        <button type="button" class="btn btn-secondary">Logout</button>
+    </a></p>
+</div>
 
 {% endblock %}
