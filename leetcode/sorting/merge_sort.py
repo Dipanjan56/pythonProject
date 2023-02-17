@@ -1,5 +1,6 @@
-"""merge sort: for this sort, we use divide and conquer algorithm
+"""merge sort: for this sort, we use recursive algorithm with divide and conquer strategy
  Time complexity -> O(nlogn)
+ But it requires extra memory, hence Space complexity -> O(n)
 """
 
 
