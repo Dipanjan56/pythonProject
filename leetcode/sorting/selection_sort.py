@@ -1,7 +1,9 @@
 from typing import List
 
 """in selection_sort we first search for the index where where lowest number resides, and then swap it
- and as a result the lowest number will be placed at the left most side"""
+ and as a result the lowest number will be placed at the left most side
+ Time complexity -> O(n2)
+ """
 
 
 def selection_sort(nums: List[int]) -> List[int]:
