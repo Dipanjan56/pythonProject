@@ -1,3 +1,6 @@
+import functools
+
+
 def add(x, y):
     return x + y
 
@@ -61,7 +64,7 @@ def pack_dictionary(**kwargs):
 
 
 # using lambda and filter function
-def print_odd():
+def filter_function_print_odd():
     li = [5, 7, 22, 97, 54, 62, 77, 23, 73, 61]
     odd_numbers = list(filter(lambda x: (x % 2 != 0), li))
     print(odd_numbers)
@@ -73,6 +76,19 @@ def map_function():
     li = [1, 2, 3, 4, 5, 6]
     square_values = list(map(lambda x: x * x, li))
     print(square_values)
+
+
+def reduce_function():
+    # initializing list
+    lis = [1, 3, 5, 6, 2]
+
+    # using reduce to compute sum of list
+    print("The sum of the list elements is : ", end="")
+    print(functools.reduce(lambda a, b: a + b, lis))
+
+    # using reduce to compute maximum element from list
+    print("The maximum element of the list is : ", end="")
+    print(functools.reduce(lambda a, b: a if a > b else b, lis))
 
 
 # using zip function
@@ -114,4 +130,5 @@ if __name__ == '__main__':
     # print_odd()
     # map_function()
     # zip_functions()
-    zip_for_loop()
+    # zip_for_loop()
+    reduce_function()
