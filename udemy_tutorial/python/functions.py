@@ -112,6 +112,12 @@ def zip_for_loop():
         print("{} scored {}".format(player, score))
 
 
+def something():
+    nums1 = [1, 2, 3, 0, 0, 0]
+    for i in range(3, len(nums1)):
+        nums1.pop()
+
+
 if __name__ == '__main__':
     # print(add(5, 10))
     # print(reverse("hello"))
@@ -131,4 +137,5 @@ if __name__ == '__main__':
     # map_function()
     # zip_functions()
     # zip_for_loop()
-    reduce_function()
+    # reduce_function()
+    something()
