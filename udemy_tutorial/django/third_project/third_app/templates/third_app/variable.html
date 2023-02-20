@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>VARIABLE HTML CONNECTED!</h1>
+<h2>My First name is: {{first_name | upper}} and My Last name is: {{last_name | lower | capfirst}}</h2>
+
+{% if user_logged_in %}
+<h1>Welcome back {{first_name}}!</h1>
+{% endif %}
+
+<h3>Full List: {{some_list}}</h3>
+<h3>First index of list is : {{some_list.0}}</h3>
+
+<ul>
+    {% for num in some_list%}
+        {% if num == 2 %}
+            <li>Two</li>
+        {%elif num == 4%}
+            <li>got Four!</li>
+        {% else %}
+            <li>{{num}}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+<ul>
+    {% for k,v in some_dict.items%}
+        <li>{{k}} : {{v}}</li>
+    {% endfor %}
+</ul>
+
+
+<h2>Full dict: {{some_dict}}</h2>
+<h3>value for specific key: {{some_dict.inside_key}}</h3>
+<h4>{# this is a comment, you always need spacing in operator#}</h4>
+</body>
+</html>

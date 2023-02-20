@@ -1,0 +1,118 @@
+body {
+    font-family: 'Lato', sans-serif;;
+    font-size: medium;
+    background-color: bisque;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: none;
+    padding: 10px 10px 10px 10px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a img {
+    border: 0;
+}
+
+h2 {
+    font-size: 150%;
+}
+
+table {
+    margin-left: 20px;
+    margin-right: 20px;
+    caption-side: bottom;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 5px;
+    text-align: left;
+}
+
+.copyright {
+    font-size: 75%;
+    font-style: italic;
+}
+
+.slogan {
+    font-size: 75%;
+    font-style: italic;
+}
+
+.confirmentry {
+    font-weight: 600;
+}
+
+/*** Tables ***/
+
+table {
+    font-size: 1em;
+    background-color: white;
+    border: 1px solid #909090;
+    color: #2a2a2a;
+    padding: 5px 5px 2px;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: thin dotted gray;
+}
+
+/*** Inputs ***/
+input[type=text] {
+    font-size: 115%;
+    width: 30em;
+}
+
+input[type=submit] {
+    font-size: 125%;
+    background-color: #55c2da;
+    cursor: grab;
+}
+
+.button {
+    background-color: #55c2da;
+    cursor: grab;
+}
+
+select {
+    font-size: 125%;
+}
+
+.button {
+    background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-size: 16px;
+    justify-content: center;
+    padding: 1rem 1.75rem;
+    text-decoration: none;
+    width: 100%;
+    border: 0;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button:hover {
+    background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+}
+
+@media (min-width: 768px) {
+    .button-43 {
+        padding: 1rem 2rem;
+    }
+}
