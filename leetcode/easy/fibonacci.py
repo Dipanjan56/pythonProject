@@ -1,5 +1,5 @@
 def print_fibonacci(num):
-    n1, n2 = 0, 1
+    a, b = 0, 1
     count = 0
     if num <= 0:
         print('there is no fibonacci')
@@ -7,10 +7,10 @@ def print_fibonacci(num):
         print(num)
     else:
         while count < num:
-            print(n1)
-            nth = n1 + n2
-            n1 = n2
-            n2 = nth
+            print(a)
+            fib_num = a + b
+            a = b
+            b = fib_num
             count += 1
 
 
