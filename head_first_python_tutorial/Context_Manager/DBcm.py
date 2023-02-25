@@ -1,4 +1,26 @@
 """
+# start the server -> mysql.server start
+# Create DB and tables
+# 1. connect to mysql server via root user -> sudo mysql -u root
+# 2. it will enter into mariaDB server -> create database vsearchlogDB
+# 3. create new user to access the DB -> CREATE USER test_user@localhost IDENTIFIED BY 'Test@123';
+# 4. if u want to see the user list -> SELECT user, host FROM mysql.user;
+# 5. now give access of the vsearchlogDB to this user-> grant all privileges on vsearchlogDB.* to test_user@localhost identified by 'Test@123' with grant option;
+# 6. now enter into the DB using this user creds -> mysql -u test_user -p vsearchlogDB [here we dont need to specify local host as system automatically add it]
+# enter with the pass word: Test@123
+# 7. now create table using a structure ->
+create table log (
+id int auto_increment primary key,
+ts timestamp default current_timestamp,
+phrase varchar(128) not null,
+letters varchar(32) not null,
+ip varchar(16) not null,
+browser_string varchar(256) not null,
+results varchar(64) not null);
+
+# now if u want to check the table -> describe log
+"""
+"""
 Context management protocol =>
         It dictates any class you create must define at least two magic method: __enter__ and __exit__
         when you adhere to this protocol, your class can hook into with statement. This class is called as 'Context Manager'
@@ -15,7 +37,8 @@ Context management protocol =>
         as the cod ein with statement fails, __exit__ has to be ready to handle this if it happens.
 """
 
-"""The UseDatabase context manager for working with MySQL/MariaDB.
+"""
+The UseDatabase context manager for working with MySQL/MariaDB.
 
 For more information, see Chapters 7, 8, 9, and 11 of the 2nd edition of
 Head First Python.
