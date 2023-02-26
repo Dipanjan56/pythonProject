@@ -38,7 +38,7 @@ print(a-b)
 print(a*b)
 print(a/b)
 print(a%b)
-print(a**b)
+print(a**b) # this means a^b
 print(a//b)
 
 """
@@ -179,6 +179,7 @@ print(not a==10)
 
 print("------Bitwise &----")
 
+# get binary values of number
 print(bin(16))
 print(bin(18))
 print(16 & 18)
@@ -186,6 +187,7 @@ print(16 & 18)
 print(16 | 18)
 
 print(16^18)
+# get numerical value from binary number
 print(0b00010)
 print(~(-4))
 
@@ -207,7 +209,7 @@ print(10>>2)
 
 """
 
-7. Assignemnt Operator
+7. Assignment Operator
 
     =, +=, -=, *= etc
 """
