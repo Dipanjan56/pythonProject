@@ -1,4 +1,5 @@
 """Minimum Window Substring"""
+import functools
 
 """
 Given two strings s and t of lengths m and n respectively, return the minimum window 
@@ -40,12 +41,16 @@ s and t consist of uppercase and lowercase English letters.
 
 """not the optimized one"""
 
+
 def minWindow(s: str, t: str) -> str:
-    if s == t:
-        return s
+    if len(s) == 1 and len(t) == 1:
+        if s == t:
+            return s
+        else:
+            return ""
     if len(s) < len(t):
         return ""
-    s_dict = {}
+    s_list = []
     for i in range(len(s)):
         for j in range(i + 1, len(s) + 1):
             substring_l = list(s[i:j])
@@ -58,11 +63,10 @@ def minWindow(s: str, t: str) -> str:
                     else:
                         substring_l.remove(char)
                 if flag:
-                    s_dict[s[i:j]] = len(s[i:j])
+                    s_list.append(s[i:j])
+    if len(s_list) > 0:
+        return functools.reduce(lambda a, b: a if len(a) < len(b) else b, s_list)
 
-    for key, value in s_dict.items():
-        if value == min(s_dict.values()):
-            return key
     return ""
 
 

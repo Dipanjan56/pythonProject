@@ -90,6 +90,10 @@ def reduce_function():
     print("The maximum element of the list is : ", end="")
     print(functools.reduce(lambda a, b: a if a > b else b, lis))
 
+    lis_2 = ['a', 'ab', 'abc', 'abcd']
+    print("The maximum length string of the list_2 is : ", end="")
+    print(functools.reduce(lambda a, b: a if len(a) > len(b) else b, lis_2))
+
 
 # using zip function
 def zip_functions():
