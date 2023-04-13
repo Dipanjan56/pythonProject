@@ -10,17 +10,6 @@ OOPS Concepts / Procedural language (Step by Step implementation of the code)
     6. Polymorphism
 
 
-    kgkjsfd
-    lkhsdfkjs
-    jhsdgfsjkdfs
-    jsdhgfsfjks
-
-        kgkjsfd
-    lkhsdfkjs
-    jhsdgfsjkdfs
-    jsdhgfsfjks
-
-
 What is a Class?
 
 

@@ -26,6 +26,7 @@ Constraints:
 
 0 <= s.length <= 5 * 104
 s consists of English letters, digits, symbols and spaces."""
+from collections import Counter
 from pprint import pprint
 
 """This is my solution, not the optimized one"""
@@ -74,10 +75,51 @@ def lengthOfLongestSubstring(s: str) -> int:
     and then retrieve the last value as it will be the longest value 
     """
     longest_value = sorted(list(substring_without_repeat_dict.values()))[-1]
-    print(longest_value)
     return longest_value
+
+
+def lengthOfLongestSubstring_2(s: str) -> int:
+    if len(s) == 0:
+        return 0
+    elif len(s) == 1:
+        return 1
+    substring_counter_list = [s[i:j] for i in range(len(s)) for j in range(i + 1, len(s) + 1)]
+
+    result = []
+    for substring in substring_counter_list:
+        flag = False
+        substring_counter = Counter(substring)
+        for value in substring_counter.values():
+            if value > 1:
+                flag = True
+                break
+        if not flag:
+            result.append(len(substring))
+    return max(result)
+
+
+def lengthOfLongestSubstring_3(s: str) -> int:
+    if len(s) == 0:
+        return 0
+    elif len(s) == 1:
+        return 1
+    result = []
+    for i in range(len(s)):
+        for j in range(i + 1, len(s) + 1):
+            substring_counter = Counter(s[i:j])
+            flag = False
+            for value in substring_counter.values():
+                if value > 1:
+                    flag = True
+                    break
+            if not flag:
+                result.append(len(s[i:j]))
+
+    return max(result)
 
 
 if __name__ == '__main__':
     s1 = 'abcabcbb'
-    lengthOfLongestSubstring(s1)
+    print(lengthOfLongestSubstring(s1))
+    print(lengthOfLongestSubstring_2(s1))
+    print(lengthOfLongestSubstring_3(s1))

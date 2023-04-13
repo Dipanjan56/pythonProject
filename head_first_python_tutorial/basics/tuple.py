@@ -17,7 +17,7 @@ print(f'empty tuple: {t2}')
 t3 = (1, 2, 3, 2, 5, 2, 4, 4, 7)
 print(f'tuple with values: {t3}')
 
-# initialise set using shorthand for string objects
+# initialise tuple using shorthand for string objects
 t4 = tuple('abcdef')
 print(f'tuple using shorthand: {t4}')
 

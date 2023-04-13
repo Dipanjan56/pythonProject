@@ -49,7 +49,7 @@ def findAnagrams(s: str, p: str):
         return []
     anagram_length = len(p)
     anagram_counter = Counter(p)
-    # print(anagram_counter)
+    print(anagram_counter)
     index_list = []
     for i in range(0, len(s)):
         j = i + anagram_length
@@ -62,7 +62,7 @@ def findAnagrams(s: str, p: str):
 
 
 def find_all_possible_anagram(s: str):
-    perms = [''.join(perm) for perm in itertools.permutations('abc')]
+    perms = [''.join(perm) for perm in itertools.permutations(s)]
     print(perms)
 
 

@@ -1,14 +1,13 @@
 def first_unique_character(s: str) -> str:
     count_dict = {}
     for char in s:
-        if char not in count_dict.keys():
-            count_dict[char] = 1
-        else:
-            count_dict[char] += 1
+        count_dict.setdefault(char, 0)
+        count_dict[char] += 1
 
-    for i in range(len(s)):
-        char = s[i]
+    """as order of dictionary is not maintained thats why we are iterating over the string again to get the key value in orederly format"""
+    for char in s:
         if count_dict[char] == 1:
+            print(char)
             return char
     return f'No unique char in {s}'
 

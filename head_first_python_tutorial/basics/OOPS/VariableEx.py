@@ -20,6 +20,7 @@ class Dog:
         self.name = "Milo"
         self.color = "Brown"
 
+    """this is instance method"""
     def getDogName(self):
         print(self.name)
 

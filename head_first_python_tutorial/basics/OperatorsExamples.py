@@ -72,9 +72,9 @@ print(s1<=s2)
 
 """print ascii value"""
 
-print(ord("C"))
+print(ord("A"))
 
-print(ord("D"))
+print(ord("a"))
 
 
 print('apple'>'apple')

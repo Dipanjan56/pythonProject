@@ -10,6 +10,7 @@ from threading import Thread
 from time import sleep
 
 
+
 def do_some_work():
     t = Thread(target=execute_slowely, args=(10, 20, 30))
     t.start()

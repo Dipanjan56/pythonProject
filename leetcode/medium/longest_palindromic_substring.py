@@ -21,6 +21,8 @@ Constraints:
 1 <= s.length <= 1000
 s consist of only digits and English letters.
 """
+from functools import reduce
+from typing import List
 
 
 def longestPalindrome(s: str) -> list:
@@ -38,8 +40,26 @@ def longestPalindrome(s: str) -> list:
 
     print(palindrome_dict)
     max_length = max(list(palindrome_dict.keys()))
-    longest_palindrome = palindrome_dict[max_length]
-    return longest_palindrome
+    longest_palindrome_list = palindrome_dict[max_length]
+    return longest_palindrome_list
+
+def longestPalindrome_2(s: str) -> List[str]:
+    palindrome_substring_list = [s[i:j] for i in range(len(s)) for j in range(i+1, len(s)+1) if check_palindrome(s[i:j])]
+    print(palindrome_substring_list)
+    palindrome_dict = {}
+    for sub_string in palindrome_substring_list:
+        if len(sub_string) in palindrome_dict.keys():
+            l = list(palindrome_dict[len(sub_string)])
+            l.append(sub_string)
+            palindrome_dict[len(sub_string)] = l
+        else:
+            palindrome_dict[len(sub_string)] = {sub_string}
+    print(palindrome_dict)
+    max_length = max(list(palindrome_dict.keys()))
+    longest_palindrome_list = palindrome_dict[max_length]
+    return longest_palindrome_list
+
+
 
 
 def check_palindrome(s):
@@ -51,3 +71,4 @@ def check_palindrome(s):
 if __name__ == '__main__':
     s = 'babad'
     print('longest substring list: ', longestPalindrome(s))
+    print('longest substring list: ', longestPalindrome_2(s))

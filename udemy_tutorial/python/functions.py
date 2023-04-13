@@ -137,5 +137,5 @@ if __name__ == '__main__':
     # map_function()
     # zip_functions()
     # zip_for_loop()
-    # reduce_function()
-    something()
+    reduce_function()
+    # something()

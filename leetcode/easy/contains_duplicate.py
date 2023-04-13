@@ -27,17 +27,30 @@ from typing import List
 
 
 class Solution:
-    def containsDuplicate(nums: List[int]) -> bool:
-        n_counter = Counter(nums)
-        print(n_counter)
+    """using counter data tructure"""
 
-        for count in n_counter.values():
-            if count > 1:
+    def containsDuplicate_using_counter(nums: List[int]) -> bool:
+        num_counter = Counter(nums)
+        print(num_counter)
+
+        for key, value in num_counter.items():
+            if value > 1:
+                print(f'duplicate value: {key}')
                 return True
+        return False
 
+    def containsDuplicate_using_for_loop(nums: List[int]) -> bool:
+        for i in range(0, len(nums) - 1):
+            count = 0
+            for j in range(i + 1, len(nums)):
+                if nums[i] == nums[j]:
+                    count += 1
+                    print(f'duplicate value: {nums[i]}')
+                    return True
         return False
 
 
 if __name__ == '__main__':
     num_list = [1, 1, 1, 3, 3, 4, 3, 2, 4, 2]
-    print(Solution.containsDuplicate(num_list))
+    print(Solution.containsDuplicate_using_counter(num_list))
+    print(Solution.containsDuplicate_using_for_loop(num_list))
