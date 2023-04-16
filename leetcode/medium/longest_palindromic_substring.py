@@ -43,8 +43,10 @@ def longestPalindrome(s: str) -> list:
     longest_palindrome_list = palindrome_dict[max_length]
     return longest_palindrome_list
 
+
 def longestPalindrome_2(s: str) -> List[str]:
-    palindrome_substring_list = [s[i:j] for i in range(len(s)) for j in range(i+1, len(s)+1) if check_palindrome(s[i:j])]
+    palindrome_substring_list = [s[i:j] for i in range(len(s)) for j in range(i + 1, len(s) + 1) if
+                                 check_palindrome(s[i:j])]
     print(palindrome_substring_list)
     palindrome_dict = {}
     for sub_string in palindrome_substring_list:
@@ -58,8 +60,6 @@ def longestPalindrome_2(s: str) -> List[str]:
     max_length = max(list(palindrome_dict.keys()))
     longest_palindrome_list = palindrome_dict[max_length]
     return longest_palindrome_list
-
-
 
 
 def check_palindrome(s):
