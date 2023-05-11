@@ -70,4 +70,4 @@ if __name__ == '__main__':
     s = "cbaebabacd"
     p = "abc"
     findAnagrams(s, p)
-    find_all_possible_anagram('abcd')
+    find_all_possible_anagram('1234')

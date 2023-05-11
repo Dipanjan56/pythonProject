@@ -119,8 +119,29 @@ def lengthOfLongestSubstring_3(s: str) -> int:
     return max(result)
 
 
+"""most optimized approach"""
+
+
+def lengthOfLongestSubstring_4(s: str):
+    char_set = set()  # To store unique characters in the current substring
+    max_length = 0  # Length of the longest substring
+    i, j = 0, 0  # Pointers for the sliding window
+
+    while i < len(s) and j < len(s):
+        if s[j] not in char_set:
+            char_set.add(s[j])
+            j += 1
+            max_length = max(max_length, j - i)  # Update the maximum length
+        else:
+            char_set.remove(s[i])
+            i += 1
+
+    return max_length
+
+
 if __name__ == '__main__':
     s1 = 'abcabcbb'
     print(lengthOfLongestSubstring(s1))
     print(lengthOfLongestSubstring_2(s1))
     print(lengthOfLongestSubstring_3(s1))
+    print(lengthOfLongestSubstring_4(s1))
