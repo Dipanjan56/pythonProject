@@ -139,6 +139,12 @@ print(f'\nletter_dict after sorting [2nd way]:')
 for key, value in sorted(letter_dict.items()):
     print(f'\t{key} : {value}')
 
+# print in sorted descending order of keys
+print(sorted(letter_dict.items(), reverse=True))
+
+# print in sorted descending order of values
+print(sorted(letter_dict.items(), key=lambda x: x[1], reverse=True))
+
 # -----------------------------------------
 
 # pretty printing dictionary

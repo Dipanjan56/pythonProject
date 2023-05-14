@@ -119,7 +119,7 @@ def lengthOfLongestSubstring_3(s: str) -> int:
     return max(result)
 
 
-"""most optimized approach"""
+"""most optimized approach with Time Complexity of O(n)"""
 
 
 def lengthOfLongestSubstring_4(s: str):

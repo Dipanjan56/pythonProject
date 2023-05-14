@@ -22,7 +22,7 @@ Guaranteed constraints:
 """
 
 
-def shortest_possible_palindrome(s: str) -> str:
+def shortest_possible_palindrome(st: str) -> str:
     pass
 
 
