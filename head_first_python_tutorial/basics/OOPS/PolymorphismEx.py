@@ -39,7 +39,7 @@ class A:
 
 class B(A):
     def add():
-        print("different defination")
+        print("different definition")
 
 2. Method Overloading
 

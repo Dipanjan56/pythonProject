@@ -151,7 +151,7 @@ print()
 """find set of vowels in message"""
 
 vowels = {'a', 'e', 'i', 'o', 'u'}
-message = "Don't forget to pack you towel"
+message = "Don't forget to pack your towel"
 
 found = {letter for letter in vowels if letter in message}
 print(found)

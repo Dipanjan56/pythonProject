@@ -19,6 +19,7 @@ BASE EXCEPTION
             3. Overflow Error
         c. EOF Exception (End of File)
         d. Name Exception
+        e. and many more
    2. System Exit
    3. Generator Exit
    4. Keyboard Interrupt

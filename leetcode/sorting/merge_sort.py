@@ -2,48 +2,50 @@
  Time complexity -> O(nlogn)
  But it requires extra memory, hence Space complexity -> O(n)
 """
+from typing import List
 
 
-def mergeSort(nums):
-    if len(nums) > 1:
+def merge_sort(arr: List[int]) -> List[int]:
+    if len(arr) > 1:
+        # divide the array in two halves
+        left_arr = arr[len(arr) // 2:]
+        right_arr = arr[:len(arr) // 2]
 
-        #  m is the point where the nums is divided into two subnumss
-        m = len(nums) // 2
-        L = nums[:m]
-        R = nums[m:]
+        # use recursion
+        merge_sort(left_arr)
+        merge_sort(right_arr)
 
-        # Sort the two halves
-        mergeSort(L)
-        mergeSort(R)
+        # merge the arrays after sorting
+        i = 0  # left array index
+        j = 0  # right array index
+        k = 0  # merged array index
 
-        i = j = k = 0
-
-        # Until we reach either end of either L or M, pick larger among
-        # elements L and R and place them in the correct position at A[p..r]
-        while i < len(L) and j < len(R):
-            if L[i] < R[j]:
-                nums[k] = L[i]
+        while i < len(left_arr) and j < len(right_arr):
+            if left_arr[i] < right_arr[j]:
+                arr[k] = left_arr[i]
                 i += 1
             else:
-                nums[k] = R[j]
+                arr[k] = right_arr[j]
                 j += 1
             k += 1
 
-        # When we run out of elements in either L or R,
-        # pick up the remaining elements and put in A[p..r]
-        while i < len(L):
-            nums[k] = L[i]
+        # merge the remaining numbers
+
+        # When we run out of elements in either left_arr or right_arr,
+        # pick up the remaining elements and put in arr
+        while i < len(left_arr):
+            arr[k] = left_arr[i]
             i += 1
             k += 1
 
-        while j < len(R):
-            nums[k] = R[j]
+        while j < len(right_arr):
+            arr[k] = right_arr[j]
             j += 1
             k += 1
 
-    return nums
+    return arr
 
 
 if __name__ == '__main__':
     nums = [4, 1, 7, 6, 2, 3]
-    print('using mergeSort: ', mergeSort(nums))
+    print('using mergeSort: ', merge_sort(nums))

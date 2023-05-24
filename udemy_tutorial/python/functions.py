@@ -63,6 +63,18 @@ def pack_dictionary(**kwargs):
         print("{}:{}".format(key, value))
 
 
+def convert_char_to_ascii():
+    char = 'A'
+    ascii_value = ord(char)
+    print(ascii_value)
+
+
+def convert_ascii_to_char():
+    ascii_value = 65
+    char = chr(ascii_value)
+    print(char)
+
+
 # using lambda and filter function
 def filter_function_print_odd():
     li = [5, 7, 22, 97, 54, 62, 77, 23, 73, 61]
@@ -76,6 +88,7 @@ def map_function():
     li = [1, 2, 3, 4, 5, 6]
     square_values = list(map(lambda x: x * x, li))
     print(square_values)
+    len(li)
 
 
 def reduce_function():
@@ -89,6 +102,10 @@ def reduce_function():
     # using reduce to compute maximum element from list
     print("The maximum element of the list is : ", end="")
     print(functools.reduce(lambda a, b: a if a > b else b, lis))
+
+    lis_2 = ['a', 'ab', 'abc', 'abcd']
+    print("The maximum length string of the list_2 is : ", end="")
+    print(functools.reduce(lambda a, b: a if len(a) > len(b) else b, lis_2))
 
 
 # using zip function
@@ -137,5 +154,5 @@ if __name__ == '__main__':
     # map_function()
     # zip_functions()
     # zip_for_loop()
-    # reduce_function()
-    something()
+    reduce_function()
+    # something()

@@ -92,3 +92,22 @@ found = vowels.intersection(set(word))
 print(f'vowels found in the word: {found}')
 
 # -----------------------------------------
+
+
+" iterating through set"
+
+num_set = {1, 4, 5, 6, 3}
+
+# approach 1:
+for num in num_set:
+    print(num)
+
+# approach 2:
+for i in range(len(list(num_set))):
+    print(f'index: {i} | value: {list(num_set)[i]}')
+
+#approach 3:
+for index, element in enumerate(list(num_set)):
+    print(f'index: {index} | value: {element}')
+
+

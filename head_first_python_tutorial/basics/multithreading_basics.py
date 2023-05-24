@@ -1,3 +1,4 @@
+""""""
 """
 Threading:
 To use concurrency we use threading
@@ -8,6 +9,7 @@ but we do not want to wait and want to execute next code block, we use thread
 
 from threading import Thread
 from time import sleep
+
 
 
 def do_some_work():
