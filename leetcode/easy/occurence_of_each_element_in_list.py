@@ -31,8 +31,26 @@ def occurence_one_pointer(nums: list):
 
     print(num_dict)
 
+    value_dict = {}
+
+    value_list = sorted(num_dict.values())[::-1]
+    print(value_list)
+
+    for key, value in num_dict.items():
+        if value not in value_dict:
+            value_dict[value] = []
+        value_dict[value].append(key)
+
+    print(value_dict)
+
+    value_set = set()
+    for val in value_list:
+        if val not in value_set:
+            print(f'{val} : {value_dict[val]}')
+            value_set.add(val)
+
 
 if __name__ == '__main__':
     nums = [4, 1, 2, 2, 3, 4, 5, 8, 5, 6, 9, 1, 9, 3, 4, 4, 1]
-    occurence_two_pointer(nums)
+    # occurence_two_pointer(nums)
     occurence_one_pointer(nums)

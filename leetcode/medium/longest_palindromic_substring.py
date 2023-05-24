@@ -24,23 +24,28 @@ s consist of only digits and English letters.
 from functools import reduce
 from typing import List
 
+"""My approach with Time Complexity: O(n2)"""
 
-def longestPalindrome(s: str) -> list:
+def check_palindrome(s):
+    if s == s[::-1]:
+        return True
+    return False
+
+
+
+def longestPalindrome(s: str):
     palindrome_dict = {}
-    for i in range(0, len(s)):
-        for j in range(i + 1, len(s) + 1):
+    for i in range(len(s)):
+        for j in range(i + 1, len(s)):
             sub_string = s[i:j]
             if check_palindrome(sub_string):
-                if len(sub_string) in palindrome_dict.keys():
-                    l = list(palindrome_dict[len(sub_string)])
-                    l.append(sub_string)
-                    palindrome_dict[len(sub_string)] = l
-                else:
-                    palindrome_dict[len(sub_string)] = {sub_string}
-
+                palindrome_dict[sub_string] = len(sub_string)
     print(palindrome_dict)
-    max_length = max(list(palindrome_dict.keys()))
-    longest_palindrome_list = palindrome_dict[max_length]
+    max_length = max(palindrome_dict.values())
+    longest_palindrome_list = []
+    for key, value in palindrome_dict.items():
+        if value == max_length:
+            longest_palindrome_list.append(key)
     return longest_palindrome_list
 
 
@@ -50,28 +55,20 @@ def longestPalindrome_2(s: str) -> List[str]:
     print(palindrome_substring_list)
     palindrome_dict = {}
     for sub_string in palindrome_substring_list:
-        if len(sub_string) in palindrome_dict.keys():
-            l = list(palindrome_dict[len(sub_string)])
-            l.append(sub_string)
-            palindrome_dict[len(sub_string)] = l
-        else:
-            palindrome_dict[len(sub_string)] = {sub_string}
+        palindrome_dict[sub_string] = len(sub_string)
     print(palindrome_dict)
-    max_length = max(list(palindrome_dict.keys()))
-    longest_palindrome_list = palindrome_dict[max_length]
+    max_length = max(palindrome_dict.values())
+    longest_palindrome_list = []
+    for key, value in palindrome_dict.items():
+        if value == max_length:
+            longest_palindrome_list.append(key)
     return longest_palindrome_list
-
-
-def check_palindrome(s):
-    if s == s[::-1]:
-        return True
-    return False
 
 
 """optimised approach with Time Complexity: O(n2)"""
 
 
-def longestPalindrome_3(s):
+def longestPalindrome_4(s):
     if not s:
         return ""
 

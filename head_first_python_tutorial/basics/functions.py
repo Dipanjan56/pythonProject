@@ -75,10 +75,14 @@ def convert_ascii_to_char():
     print(char)
 
 
+def fsdf(x):
+    return x % 2 != 0
+
+
 # using lambda and filter function
 def filter_function_print_odd():
     li = [5, 7, 22, 97, 54, 62, 77, 23, 73, 61]
-    odd_numbers = list(filter(lambda x: (x % 2 != 0), li))
+    odd_numbers = list(filter(fsdf, li))
     print(odd_numbers)
 
 

@@ -49,7 +49,7 @@ def matrix_multiplication():
     # iterating by row of A
     for i in range(len(A)):
 
-        # iterating by column by B
+        # iterating by column of B
         for j in range(len(B[0])):
 
             # iterating by rows of B
