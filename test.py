@@ -3,6 +3,18 @@ import math
 from typing import List
 
 
+def print_fibonacci(count: int):
+    n1 = 0
+    n2 = 1
+    print(n1)
+    print(n2)
+    for _ in range(count):
+        n3 = n1 + n2
+        n1 = n2
+        n2 = n3
+        print(n3)
+
+
 def reverse_integer(num: int):
     rev_num = 0
     while num > 0:
@@ -76,8 +88,8 @@ def bubble_sort(arr: List[int]):
 
 def merge_sort(arr: List[int]):
     if len(arr) > 1:
-        left_arr = arr[:len(arr)//2]
-        right_arr = arr[len(arr)//2:]
+        left_arr = arr[:len(arr) // 2]
+        right_arr = arr[len(arr) // 2:]
 
         merge_sort(left_arr)
         merge_sort(right_arr)
@@ -109,6 +121,7 @@ def merge_sort(arr: List[int]):
 if __name__ == '__main__':
     arr = [4, 1, 5, 2, 3, 9, 7, 6]
     arr_sorted = [5, 7, 8, 9, 11, 20]
+    print_fibonacci(5)
     print(reverse_integer(123))
     print(check_prime(149))
     print(binary_search_recursion(arr_sorted, 0, len(arr_sorted) - 1, 7))
