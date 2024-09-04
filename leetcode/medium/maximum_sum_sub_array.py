@@ -46,7 +46,10 @@ def maxSubArray(nums: List[int]) -> int:
     return sorted(sum_list)[-1]
 
 
-"""optimized solution: using optimized bruteforce and two pointers approach starting from 0 index"""
+"""optimized solution: using optimized bruteforce and two pointers approach starting from 0 index
+Time complexity -> O(n^2)
+still all the test cases will not be  passed in leetcode due to time
+"""
 
 
 def maxSubArray_2(nums: List[int]) -> int:
@@ -60,7 +63,25 @@ def maxSubArray_2(nums: List[int]) -> int:
     return max_sum
 
 
+"""Most optimized solution - Kanade's algo : Time Complexity: O(n)
+
+see approach 2 -> https://leetcode.com/problems/maximum-subarray/editorial/?envType=featured-list&envId=top-interview-questions?envType=featured-list&envId=top-interview-questions
+"""
+
+
+def maxSubArray_3(nums: List[int]) -> int:
+    max_sum = nums[0]
+    current_sum = nums[0]
+
+    for num in nums[1:]:
+        current_sum = max(num, num + current_sum)
+        max_sum = max(current_sum, max_sum)
+
+    return max_sum
+
+
 if __name__ == '__main__':
     nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
     print(maxSubArray(nums))
     print(maxSubArray_2(nums))
+    print(maxSubArray_3(nums))

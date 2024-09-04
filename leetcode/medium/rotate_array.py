@@ -53,14 +53,47 @@ def rotate(nums: List[int], k: int) -> None:
         """
 
     k %= len(nums) # this is because if k is greater than length of the array then actual k should be: k = k - len(arr)
-    print(k)
     a = nums[::-1][0:k][::-1] + nums[::-1][k:][::-1]
     nums[:] = a # this is shallow copy
     print(nums)
 
+"""
+To solve the problem of rotating an array to the right by  k  steps, you can use a few different approaches. The most efficient one for large arrays involves using array manipulation techniques that work in linear time.
+
+Here’s the plan:
+
+	1.	Reverse the entire array.
+	2.	Reverse the first  k  elements.
+	3.	Reverse the remaining  n - k  elements.
+
+This works because reversing the entire array flips it completely, 
+and then reversing the subarrays restores the order but with the  k  elements shifted to the beginning.
+
+First example:
+	•	Original: [1, 2, 3, 4, 5, 6, 7]
+	•	After reversing the entire array: [7, 6, 5, 4, 3, 2, 1]
+	•	After reversing the first 3 elements: [5, 6, 7, 4, 3, 2, 1]
+	•	After reversing the remaining 4 elements: [5, 6, 7, 1, 2, 3, 4]
+"""
+
+def rotate_optimized(nums, k):
+    n = len(nums)
+    k = k % n  # To handle cases where k >= n
+
+    # Reverse the entire array
+    nums.reverse()
+
+    # Reverse the first k elements
+    nums[:k] = reversed(nums[:k])
+
+    # Reverse the remaining n-k elements
+    nums[k:] = reversed(nums[k:])
+
+    return nums  # returning nums for clarity, in practice, nums is modified in place
 
 
 
 if __name__ == '__main__':
     nums = [1, 2, 3]
     rotate(nums, 4)
+    print(rotate_optimized(nums, 3))

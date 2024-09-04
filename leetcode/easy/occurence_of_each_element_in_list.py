@@ -22,8 +22,19 @@ def occurence_two_pointer(nums: list):
 
 """time complexity: n"""
 
+"most optimized approach"
+def occurrence_one_pointer_1(nums: list):
+    occurrence_dict = {}
+    for n in nums:
+        if n not in occurrence_dict.keys():
+            occurrence_dict[n] = 0
+        occurrence_dict[n] += 1
+    print(occurrence_dict)
 
-def occurence_one_pointer(nums: list):
+    
+
+
+def occurrence_one_pointer_2(nums: list):
     num_dict = {}
     for num in nums:
         num_dict.setdefault(num, 0)
@@ -53,4 +64,4 @@ def occurence_one_pointer(nums: list):
 if __name__ == '__main__':
     nums = [4, 1, 2, 2, 3, 4, 5, 8, 5, 6, 9, 1, 9, 3, 4, 4, 1]
     # occurence_two_pointer(nums)
-    occurence_one_pointer(nums)
+    occurrence_one_pointer_1(nums)

@@ -36,15 +36,9 @@ Constraints:
 
 """optimized solution with n^2 time-complexity"""
 
-def threeSum_2_pointer(nums: List[int]) -> List[List[int]]:
+
+def three_sum_1(nums: List[int]) -> List[List[int]]:
     triplet_list = []
-    if len(nums) < 3:
-        return []
-    elif len(nums) == 3:
-        if nums[0] + nums[1] + nums[2] == 0:
-            return [nums]
-        else:
-            return []
     for i in range(len(nums)):
         for j in range(i + 1, len(nums) - 1):
             two_sum = nums[i] + nums[j]
@@ -56,6 +50,24 @@ def threeSum_2_pointer(nums: List[int]) -> List[List[int]]:
     return triplet_list
 
 
+"""Most optimized Solution: Time Complexity: O(n^2)"""
+
+
+def three_sum_2(nums: List[int]) -> List[List[int]]:
+    result_set = set()
+    seen = {}
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            diff = 0 - (nums[i] + nums[j])
+            if diff in seen and seen[diff] == i:
+                triplet = tuple(sorted([nums[i], nums[j], diff]))
+                result_set.add(triplet)
+            else:
+                seen[nums[j]] = i
+    return result_set
+
+
 if __name__ == '__main__':
-    nums = [-1,0,1,2,-1,-4]
-    print(threeSum_2_pointer(nums))
+    nums = [-1, 0, 1, 2, -1, -4]
+    print(three_sum_1(nums))
+    print(three_sum_2(nums))

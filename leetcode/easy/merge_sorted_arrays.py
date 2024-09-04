@@ -49,13 +49,13 @@ def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> List[int]:
     for i in range(m, len(nums1)):
         nums1.pop()
     nums1.extend(nums2[-n:])
-    bubble_sort(nums1)
+    merge_sort(nums1)
     return nums1
 
 
 def bubble_sort(nums: List[int]) -> List[int]:
-    swapped = False
     for i in range(len(nums) - 1):
+        swapped = False
         for j in range(0, len(nums) - i - 1):
             if nums[j] > nums[j + 1]:
                 nums[j], nums[j + 1] = nums[j + 1], nums[j]
@@ -63,6 +63,49 @@ def bubble_sort(nums: List[int]) -> List[int]:
         if not swapped:
             return nums
     return nums
+
+
+def merge_sort(arr: List[int]) -> List[int]:
+    if len(arr) > 1:
+        # divide the array in two halves
+        left_arr = arr[len(arr) // 2:]
+        right_arr = arr[:len(arr) // 2]
+
+        # use recursion
+        merge_sort(left_arr)
+        merge_sort(right_arr)
+
+        # merge the arrays after sorting
+        i = 0  # left array index
+        j = 0  # right array index
+        k = 0  # merged array index
+
+        while i < len(left_arr) and j < len(right_arr):
+            if left_arr[i] < right_arr[j]:
+                arr[k] = left_arr[i]
+                i += 1
+            else:
+                arr[k] = right_arr[j]
+                j += 1
+            k += 1
+
+        # merge the remaining numbers
+
+        # When we run out of elements in either left_arr or right_arr,
+        # pick up the remaining elements and put in arr
+        while i < len(left_arr):
+            arr[k] = left_arr[i]
+            i += 1
+            k += 1
+
+        while j < len(right_arr):
+            arr[k] = right_arr[j]
+            j += 1
+            k += 1
+
+    return arr
+
+
 
 
 if __name__ == '__main__':

@@ -26,14 +26,28 @@ from typing import List
 
 """My approach with Time Complexity: O(n2)"""
 
+
+def longest_palindrome_1(s: str) -> str:
+    max_length = 0
+    longest_palindromic_string = ''
+    for i in range(len(s)):
+        for j in range(i + 1, len(s) + 1):
+            s1 = s[i:j]
+            if s1 == s1[::-1]:
+                if len(s1) > max_length:
+                    max_length = len(s1)
+                    longest_palindromic_string = s1
+
+    return longest_palindromic_string
+
+
 def check_palindrome(s):
     if s == s[::-1]:
         return True
     return False
 
 
-
-def longestPalindrome(s: str):
+def longest_palindrome_2(s: str):
     palindrome_dict = {}
     for i in range(len(s)):
         for j in range(i + 1, len(s)):
@@ -49,7 +63,7 @@ def longestPalindrome(s: str):
     return longest_palindrome_list
 
 
-def longestPalindrome_2(s: str) -> List[str]:
+def longest_palindrome_3(s: str) -> List[str]:
     palindrome_substring_list = [s[i:j] for i in range(len(s)) for j in range(i + 1, len(s) + 1) if
                                  check_palindrome(s[i:j])]
     print(palindrome_substring_list)
@@ -68,7 +82,7 @@ def longestPalindrome_2(s: str) -> List[str]:
 """optimised approach with Time Complexity: O(n2)"""
 
 
-def longestPalindrome_4(s):
+def longest_palindrome_4(s):
     if not s:
         return ""
 
@@ -97,6 +111,8 @@ def expand_around_center(s, left, right):
 
 if __name__ == '__main__':
     s = 'babad'
-    # print('longest substring list: ', longestPalindrome(s))
-    # print('longest substring list: ', longestPalindrome_2(s))
-    print('longest substring list: ', longestPalindrome_3(s))
+    print('longest substring list: ', longest_palindrome_1(s))
+    # print('longest substring list: ', longest_palindrome_2(s))
+    # print('longest substring list: ', longest_palindrome_3(s))
+    # print('longest substring list: ', longest_palindrome_4(s))
+

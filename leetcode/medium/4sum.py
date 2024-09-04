@@ -39,4 +39,7 @@ def solution_3_pointer(nums: List[int], target: int) -> List[List[int]]:
 if __name__ == '__main__':
     nums = [1, 0, -1, 0, -2, 2]
     target = 0
+    s = ' 12345  '
+    m= s.strip()
+    print(nums[-1])
     print(solution_3_pointer(nums, target))

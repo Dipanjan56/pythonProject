@@ -136,9 +136,27 @@ def lengthOfLongestSubstring_4(s: str):
     return max_length
 
 
+def lengthOfLongestSubstring_5(s: str) -> int:
+    if len(s) == 1:
+        return 1
+    max_length = 0
+    for i in range(len(s) - 1):
+        subStr = s[i]
+        max_length = max(len(subStr), max_length)
+        for j in range(i + 1, len(s)):
+            if s[j] not in subStr:
+                subStr += s[j]
+                print(subStr)
+                max_length = max(len(subStr), max_length)
+            else:
+                break
+    return max_length
+
+
 if __name__ == '__main__':
     s1 = 'abcabcbb'
     print(lengthOfLongestSubstring(s1))
     print(lengthOfLongestSubstring_2(s1))
     print(lengthOfLongestSubstring_3(s1))
     print(lengthOfLongestSubstring_4(s1))
+    print(lengthOfLongestSubstring_5(s1))
