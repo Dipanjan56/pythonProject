@@ -129,3 +129,4 @@ if __name__ == '__main__':
     print(insertion_sort(arr))
     print(bubble_sort(arr))
     print(merge_sort(arr))
+    nums = [0, 1, 2, 4, 5, 7]
