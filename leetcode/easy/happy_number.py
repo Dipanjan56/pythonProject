@@ -51,6 +51,26 @@ def is_happy(n: int) -> bool:
         return False
 
 
+def is_happy_2(n: int) -> bool:
+    def get_next_number(num):
+        total_sum = 0
+        while num > 0:
+            digit = num % 10
+            total_sum += digit ** 2
+            num //= 10
+        return total_sum
+
+    seen_numbers = set()  # This set keeps track of numbers we have already processed
+
+    while n != 1 and n not in seen_numbers:
+        seen_numbers.add(n)  # Add the number to the set of seen numbers
+        n = get_next_number(n)  # Replace n by the sum of the squares of its digits
+
+    # After the loop exits, we check whether n is 1
+    return n == 1  # If n is 1, return True (n is a happy number), otherwise return False
+
+
 if __name__ == '__main__':
     n = 4
-    print(is_happy(4))
+    print(is_happy(n))
+    print(is_happy_2(n))

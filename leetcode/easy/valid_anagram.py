@@ -27,14 +27,16 @@ s and t consist of lowercase English letters.
 
 
 def is_anagram_1(s: str, t: str) -> bool:
-    if len(s) == len(t):
-        t_list = list(t)
-        for char in s:
-            if char in t_list:
-                t_list.remove(char)
-        if len(t_list) == 0:
-            return True
-    return False
+    if len(s) != len(t):
+        return False
+
+    t_list = list(t)
+    for char in s:
+        if char in t_list:
+            t_list.remove(char)
+        else:
+            return False
+    return True
 
 
 def is_anagram_2(s: str, t: str) -> bool:
