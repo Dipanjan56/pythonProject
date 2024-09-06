@@ -1,4 +1,5 @@
 import functools
+from itertools import combinations
 
 
 def add(x, y):
@@ -82,7 +83,8 @@ def fsdf(x):
 # using lambda and filter function
 def filter_function_print_odd():
     li = [5, 7, 22, 97, 54, 62, 77, 23, 73, 61]
-    odd_numbers = list(filter(fsdf, li))
+    # odd_numbers = list(filter(fsdf, li))
+    odd_numbers = list(filter(lambda x: x % 2 != 0, li))
     print(odd_numbers)
 
 
@@ -133,6 +135,13 @@ def zip_for_loop():
     for player, score in zip(players, scores):
         print("{} scored {}".format(player, score))
 
+# using combinations: print the difference if two numbers in a list of all combinations
+def combinations_for_loop():
+    nums = [1,2,3,4,5,7,8]
+    for a,b in combinations(nums, 2):
+        diff = abs(a-b)
+        print(diff)
+
 
 def something():
     nums1 = [1, 2, 3, 0, 0, 0]
@@ -159,5 +168,7 @@ if __name__ == '__main__':
     # map_function()
     # zip_functions()
     # zip_for_loop()
-    reduce_function()
+    # reduce_function()
     # something()
+    # filter_function_print_odd()
+    combinations_for_loop()

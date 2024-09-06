@@ -36,97 +36,97 @@ def check_prime(num: int) -> bool:
     return True
 
 
-def binary_search_recursion(arr: List[int], start, end, target):
+def binary_search_recursion(nums: List[int], start, end, target):
     mid = (start + end) // 2
 
-    if target == arr[mid]:
+    if target == nums[mid]:
         return mid
-    elif target < arr[mid]:
-        return binary_search_recursion(arr, 0, mid - 1, target)
-    elif target > arr[mid]:
-        return binary_search_recursion(arr, mid + 1, end, target)
+    elif target < nums[mid]:
+        return binary_search_recursion(nums, 0, mid - 1, target)
+    elif target > nums[mid]:
+        return binary_search_recursion(nums, mid + 1, end, target)
     else:
         return -1
 
 
-def binary_search_iteration(arr: List[int], target):
+def binary_search_iteration(nums: List[int], target):
     start = 0
-    end = len(arr) - 1
+    end = len(nums) - 1
 
     while start <= end:
         mid = (start + end) // 2
 
-        if target == arr[mid]:
+        if target == nums[mid]:
             return mid
-        elif target < arr[mid]:
+        elif target < nums[mid]:
             end = mid - 1
-        elif target > arr[mid]:
+        elif target > nums[mid]:
             start = mid + 1
         else:
             return -1
 
 
-def insertion_sort(arr: List[int]):
-    for i in range(1, len(arr)):
+def insertion_sort(nums: List[int]):
+    for i in range(1, len(nums)):
         j = i
-        while arr[j - 1] > arr[j] and j > 0:
-            arr[j - 1], arr[j] = arr[j], arr[j - 1]
+        while nums[j - 1] > nums[j] and j > 0:
+            nums[j - 1], nums[j] = nums[j], nums[j - 1]
             j -= 1
-    return arr
+    return nums
 
 
-def bubble_sort(arr: List[int]):
+def bubble_sort(nums: List[int]):
     swapped = False
-    for i in range(len(arr)):
-        for j in range(i + 1, len(arr) - i - 1):
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums) - i - 1):
+            if nums[j] > nums[j + 1]:
+                nums[j], nums[j + 1] = nums[j + 1], nums[j]
                 swapped = True
         if not swapped:
-            return arr
+            return nums
 
 
-def merge_sort(arr: List[int]):
-    if len(arr) > 1:
-        left_arr = arr[:len(arr) // 2]
-        right_arr = arr[len(arr) // 2:]
+def merge_sort(nums: List[int]):
+    if len(nums) > 1:
+        left_nums = nums[:len(nums) // 2]
+        right_nums = nums[len(nums) // 2:]
 
-        merge_sort(left_arr)
-        merge_sort(right_arr)
+        merge_sort(left_nums)
+        merge_sort(right_nums)
 
         i = j = k = 0
 
-        while i < len(left_arr) and j < len(right_arr):
-            if left_arr[i] < right_arr[j]:
-                arr[k] = left_arr[i]
+        while i < len(left_nums) and j < len(right_nums):
+            if left_nums[i] < right_nums[j]:
+                nums[k] = left_nums[i]
                 i += 1
             else:
-                arr[k] = right_arr[j]
+                nums[k] = right_nums[j]
                 j += 1
             k += 1
 
-        while i < len(left_arr):
-            arr[k] = left_arr[i]
+        while i < len(left_nums):
+            nums[k] = left_nums[i]
             i += 1
             k += 1
 
-        while j < len(right_arr):
-            arr[k] = right_arr[j]
+        while j < len(right_nums):
+            nums[k] = right_nums[j]
             j += 1
             k += 1
 
-    return arr
+    return nums
 
 
 if __name__ == '__main__':
-    arr = [4, 1, 5, 2, 3, 9, 7, 6]
-    arr_sorted = [5, 7, 8, 9, 11, 20]
+    nums = [4, 1, 5, 2, 3, 9, 7, 6]
+    nums_sorted = [5, 7, 8, 9, 11, 20]
     print_fibonacci(5)
     print(reverse_integer(123))
     print(check_prime(149))
-    print(binary_search_recursion(arr_sorted, 0, len(arr_sorted) - 1, 7))
-    print(binary_search_iteration(arr_sorted, 7))
-    print(insertion_sort(arr))
-    print(bubble_sort(arr))
-    print(merge_sort(arr))
+    print(binary_search_recursion(nums_sorted, 0, len(nums_sorted) - 1, 7))
+    print(binary_search_iteration(nums_sorted, 7))
+    print(insertion_sort(nums))
+    print(bubble_sort(nums))
+    print(merge_sort(nums))
     nums = [0, 1, 2, 4, 5, 7]
