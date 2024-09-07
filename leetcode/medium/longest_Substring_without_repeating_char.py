@@ -152,6 +152,22 @@ def lengthOfLongestSubstring_5(s: str) -> int:
                 break
     return max_length
 
+"""Use Sliding Window"""
+def lengthOfLongestSubstring_most_optimezed(s: str) -> int:
+    left = 0
+    max_len = 0
+    char_list = []
+
+    for right in range(len(s)):
+        while s[right] in char_list:
+            char_list.remove(s[left])
+            left += 1
+
+        char_list.append(s[right])
+        max_len = max(max_len, right - left + 1)
+
+    return max_len
+
 
 if __name__ == '__main__':
     s1 = 'abcabcbb'

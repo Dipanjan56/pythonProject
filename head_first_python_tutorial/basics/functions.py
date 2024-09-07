@@ -75,6 +75,12 @@ def convert_ascii_to_char():
     char = chr(ascii_value)
     print(char)
 
+def check_char_is_alpha_numeric():
+    s = 'abc1_f,'
+    for char in s:
+        if char.isalnum():
+            print(char)
+
 
 def fsdf(x):
     return x % 2 != 0
@@ -171,4 +177,5 @@ if __name__ == '__main__':
     # reduce_function()
     # something()
     # filter_function_print_odd()
-    combinations_for_loop()
+    # combinations_for_loop()
+    check_char_is_alpha_numeric()
