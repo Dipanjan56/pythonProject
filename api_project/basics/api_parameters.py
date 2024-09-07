@@ -1,3 +1,6 @@
+"""API Parameters """
+
+"""
 APIs (Application Programming Interfaces) often accept various types of parameters to control the behavior of the request and response.
 These parameters allow the client to send data, filter results, set preferences, and more. There are generally **four** main types of parameters in APIs:
 
@@ -123,3 +126,4 @@ These parameters allow the client to send data, filter results, set preferences,
 - **Body Parameters**: Use for submitting data to create or update resources.
 
 Let me know if you need further clarification or more examples!
+"""
