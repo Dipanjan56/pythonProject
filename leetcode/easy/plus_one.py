@@ -49,19 +49,17 @@ Constraints:
 
 def plus_one(digits: List[int]) -> List[int]:
     num = 0
-    for i in range(len(digits)):
-        power = len(digits) - i - 1
-        num += digits[i] * (10 ** power)
+    for n in digits:
+        num = num * 10 + n
 
-    result = num + 1
+    num = num + 1
 
-    new_digits = []
-    while result > 0:
-        reminder = result % 10
-        new_digits.append(reminder)
-        result = result // 10
+    digits_list = []
+    while num > 0:
+        digits_list.append(num % 10)
+        num = num // 10
 
-    return new_digits[::-1]
+    return digits_list[::-1]
 
 
 if __name__ == '__main__':
