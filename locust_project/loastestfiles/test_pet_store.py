@@ -1,10 +1,12 @@
-from locust import HttpUser, between
+from locust import HttpUser, between, events
 
-from locust_project.taskset import PetStoreTasks
+from locust_project.taskset.pet_store_tasks import PetStoreTasks
 
-def on_start(self):
+@events.test_start.add_listener
+def on_start(environment, **kwargs):
     print("LOAD TEST STARTED........")
 
+@events.test_stop.add_listener
 def on_stop(environment, **kwargs):
     print("LOAD TEST COMPLETED")
 

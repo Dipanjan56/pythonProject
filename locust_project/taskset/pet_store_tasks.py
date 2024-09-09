@@ -29,7 +29,7 @@ class PetStoreTasks(SequentialTaskSet):
             'Content-Type': 'application/json'
         }
         payload = {
-            "id": random.randint(10000, 1000000),
+            "id": 10,
             "category": {
                 "id": 0,
                 "name": self.pet_type
