@@ -1,16 +1,15 @@
-from locust import events, HttpUser
+from locust import HttpUser, between
 
 from locust_project.taskset import PetStoreTasks
 
-@events.test_start.add_listener
-def on_test_start(environment, **kwargs):
+def on_start(self):
     print("LOAD TEST STARTED........")
 
-@events.test_stop.add_listener
-def on_test_stop(environment, **kwargs):
+def on_stop(environment, **kwargs):
     print("LOAD TEST COMPLETED")
 
 class TestPetStore(HttpUser):
+    wait_time = between(0.2, 1)
     tasks = [PetStoreTasks]
 
 
