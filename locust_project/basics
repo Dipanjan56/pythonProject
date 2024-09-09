@@ -1,0 +1,156 @@
+Q1. What do you understand by Performance Testing?
+Ans: Performance Testing is a category of software testing that ensures the application performs well under any workload.
+     This type of testing is not done to identify bugs in the application. Its main intention is to eliminate performance
+     issues and bottlenecks by measuring the performance quality attributes of the system.
+
+Q2. What are the steps involved in conducting performance testing?
+Ans. Requirement Gathering -> Defining Scopes & Objectives -> Architecture Review -> Test Strategy -> TestCase Design -> Execution -> Result analysis -> Report and Conclusion
+
+Q3. What do you understand by performance tuning?
+Ans: Performance Tuning is the process of identifying performance bottlenecks and taking steps to eliminate them. There are two types of tuning, they are:
+     Hardware tuning: This type of tuning helps in improving the system performance by either replacing,
+     adding or optimizing the hardware (Processor, CPU, RAM etc) of a system to eliminate the bottlenecks caused due to hardware.
+     Software tuning: This helps identify software bottlenecks by performing code and database profiling.
+     Here, the software code will be modified for resolving the bottlenecks.
+
+Q4. What are some of the common problems that occur due to poor performance?
+Ans: Following are some of the issues caused due to poor performance:
+    1. Bottlenecks – These are obstructions that contribute to system degradation in terms of performance.
+       They occur when there are coding errors or hardware issues that reduces the throughput of the application under certain workloads.
+    2. Poor response time – Response time refers to the time taken by the application to respond to any request.
+       For the best user experience, the response times should be very fast. Poor performance of the application
+       leads to slower response times. If response times are slow, then the user loses interest in our application and
+       might turn towards the competitor’s application.
+    3. Long Load time – Load time refers to the initial time taken by an application to start.
+       This time should be as minimum as possible. Low performance leads to increased load time.
+    4. Poor scalability – This impacts software from handling expected user load which makes the application unavailable to some set of users.
+
+Q5. What are some of the common performance bottlenecks and how do they impact your application?
+And: Bottlenecks are system obstructions that contribute to degradation in the system’s performance. They are caused either by hardware issues or coding errors that lead to a reduction of throughput under varying loads. Some of the common bottlenecks in performance are:
+
+    1. Processor bottlenecks: These occur when the processor is overloaded and cannot perform its tasks and respond to
+       requests on time. These can be in 2 forms:
+    2. CPU running at above 80% capacity for a prolonged period.
+    3. A long queue of requests for the processor.
+    4. Both of these forms occur when the system has insufficient memory and has continuous interruption from the I/O devices.
+       They can be resolved by adding more RAM, increasing CPU power and improving algorithmic efficiency.
+    5. Memory Utilization: This bottleneck occurs when the system does not have fast RAM or does not have sufficient memory.
+       This impacts the speed of serving information to the CPU thereby slowing down the application. Whenever the device
+       does not have enough RAM, the storage will be offloaded to SSD or HDD. These issues can be resolved by increasing
+       the memory capacity or increasing RAM. If the RAM is very slow, then it can be replaced.
+       Sometimes the problem can arise due to memory leak issues wherein a program does not release memory so that the
+       system can use it. Correcting the application program to free memory also can fix the issue.
+    6. Network bottlenecks: These occur when two or more devices lack the necessary bandwidth to communicate with each other.
+       Whenever there is an overburdened server or overloaded network that causes the network to lose its integrity.
+       These issues can be resolved by upgrading servers, network hardware like hubs, routers, access points etc.
+    7. Software bottlenecks: These bottlenecks are due to the software where programs are built for handling finite
+       tasks so that it doesn’t utilize additional RAM or CPU. This makes the program use only a single core or processor
+        despite the availability of resources. These can be resolved by making the software program more efficient so
+        that it can use available resources efficiently.
+    8. Disk Usage: The slowest component in a server is long-term storage units like SSDs or HDDs that are unavoidable.
+       The fastest long-term storage units have physical limits which makes it difficult for the programmers
+       to troubleshoot such issues. These can be fixed by increasing RAM caching rates, reducing fragmentation issues
+       or by addressing insufficient bandwidth by switching to faster storage units.
+    9. The key to fixing all the bottlenecks are by pinpointing the root cause of the system degradation and
+       then by fixing the code or by adding additional hardware resources depending on the causes.
+
+
+Q6. What are the types of Performance Testing?
+Ans: The different types of performance testing are:
+    1. Load testing – This type of testing checks the ability of an application to perform under known loads.
+       The main goal here is to identify any performance bottlenecks before the application goes into production.
+    2. Stress testing – This type of testing involves testing the application’s behaviour under extreme stress or
+       workloads for identifying the breaking point of an application.
+    3. Endurance testing – This testing is done to ensure that the software can handle the expected load for a continuous period.
+    4. Spike testing – This testing is done to ensure that the system works well under the sudden influence of large load spikes.
+    5. Volume testing – This testing ensures that the system behaves well under the influence of a large volume of data.
+
+Q7. What is Baseline Testing?
+Ans: Baseline testing is a process of recording performance metrics of a software application when it undergoes performance testing.
+     When the same application is updated, including software, hardware, network, and code changes, it again goes through performance testing, and
+     new performance metrics results are compared with the previous performance metrics results, thus defining a new baseline
+
+Q8. What is Performance Benchmarking?
+Ans: In layman’s terms, the benchmark is just one reference point that is decided upon by measuring a repeatable set of quantifiable results.
+     This reference point is considered as a point that serves to be the standard pointer used for further analysis.
+
+Q9. What is Baselining?
+Ans: Baselining is the process of establishing a point of reference or a standard against which future changes or
+     performance can be measured. It involves capturing the current state of a system, process, or project to use as a
+     benchmark for comparison over time. Baselines are essential in various fields such as performance testing,
+     project management, and IT operations to track progress, identify improvements, or detect deviations.
+
+    •	Baselining is about establishing a reference point to track progress or deviations within your own system over time.
+	•	Benchmarking is about comparing your system’s performance to external standards or competitors to understand how well you are doing relative to others.
+
+
+
+Q10. define RPS and throughput?
+Ans: 1. RPS (Requests Per Second):
+
+	•	Definition: RPS measures the number of requests your system (client or load testing tool) sends to the server per second. It’s the rate at which requests are initiated by the client.
+	•	Focus: It emphasizes how much load your test (or system) is putting on the server.
+	•	Example: If your test is sending 500 HTTP requests per second to the server, your RPS is 500.
+
+    2. Throughput:
+
+	•	Definition: Throughput measures the number of successfully processed requests by the server per second or per unit time. It represents how many requests the server is actually handling/responding to.
+	•	Focus: It emphasizes the server’s ability to handle the load.
+	•	Example: If the server processes 480 requests out of 500 RPS, then the throughput is 480 requests per second.
+
+    Key Differences:
+
+	1.	RPS is client-side: It measures the rate at which requests are sent from the client/load generator to the server.
+	2.	Throughput is server-side: It measures the rate at which the server processes and responds to requests.
+
+    When They Differ:
+
+	•	When RPS > Throughput: This often indicates that the server is unable to keep up with the load, resulting in failed or delayed requests.
+	•	When RPS = Throughput: This typically happens when the server is healthy and can handle all incoming requests at the rate they’re being sent.
+
+Q11. What is median?
+Ans: The median is a statistical measure that represents the middle value in a dataset when the data points are arranged in ascending or descending order. If the dataset has an odd number of elements, the median is the middle element. If the dataset has an even number of elements, the median is the average of the two middle elements.
+
+    How to Calculate the Median:
+
+	1.	Sort the data: Arrange the values in ascending or descending order.
+	2.	Find the middle value:
+	    •	If the number of elements in the dataset is odd, the median is the middle value.
+	    •	If the number of elements in the dataset is even, the median is the average of the two middle values.
+
+    Example 1: Odd Number of Elements
+
+    Consider the dataset: [3, 5, 1, 9, 7]
+    Step 1: Sort the data: [1, 3, 5, 7, 9]
+    Step 2: Find the middle value:
+	•	There are 5 numbers in the dataset, so the median is the 3rd value, which is 5.
+    Median: 5 -> This is the value we used to set as baseline
+
+Q12. what is standard deviation?
+Ans: Standard deviation is a statistical measure that represents the amount of variation or dispersion in a set of data.
+     It tells us how spread out the values in a dataset are from the mean (average). A low standard deviation means that
+     the data points are close to the mean, while a high standard deviation means that the data points are spread out over a wider range.
+
+     How It Works:
+
+	1.	Find the mean: Calculate the average of the dataset.
+	2.	Subtract the mean from each data point: This shows how far each point is from the average.
+	3.	Square each difference: This ensures that all deviations are positive values.
+	4.	Find the average of the squared differences.
+	5.	Take the square root: This gives the standard deviation.
+
+	Key Insights:
+	•	Low standard deviation: Data points are clustered around the mean (less spread).
+	•	High standard deviation: Data points are more spread out, indicating greater variation.
+
+	 Use Cases:
+	•	In Performance Testing: Standard deviation helps assess the variability in response times. A high standard deviation means there’s inconsistency in response times, which can indicate performance issues.
+
+
+
+
+
+
+
+
+
