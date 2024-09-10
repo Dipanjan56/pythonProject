@@ -34,52 +34,7 @@ import math
 """using two pointers approach
 Time Complexity is O(n^2)
 """
-
-
 def maxProfit(prices: List[int]) -> int:
-    max_profit = 0
-
-    for i in range(len(prices) - 1):
-        for j in range(i + 1, len(prices)):
-            if prices[j] > prices[i]:
-                profit = prices[j] - prices[i]
-                max_profit = max(profit, max_profit)
-    return max_profit
-
-
-def best_time_to_buy_sell_stock(prices: List[int]) -> int:
-    max_profit = 0
-
-    for i in range(len(prices)):
-        for j in range(i + 1, len(prices)):
-            if prices[j] > prices[i]:
-                current_profit = prices[j] - prices[i]
-                max_profit = max(max_profit, current_profit)
-
-    print(max_profit)
-    return max_profit
-
-
-"""using single pointer
-Time complexity is O(n)
-"""
-
-
-def max_profit_optimized(prices: List[int]) -> int:
-    min_price = math.inf
-    max_profit = 0
-    for i in range(len(prices)):
-        current_profit = 0
-        if prices[i] < min_price:
-            min_price = prices[i]
-        else:
-            current_profit = prices[i] - min_price
-        max_profit = max(current_profit, max_profit)
-
-    return max_profit
-
-
-def max_profit_optimized_2(prices: List[int]) -> int:
     max_profit = 0
     min_price = prices[0]
 
@@ -95,5 +50,3 @@ if __name__ == '__main__':
     prices_2 = [2, 4, 1]
     prices_3 = [7, 2, 5, 8, 4, 1, 3, 6]
     print(maxProfit(prices_3))
-    print(max_profit_optimized(prices_3))
-    print(max_profit_optimized_2(prices_3))
