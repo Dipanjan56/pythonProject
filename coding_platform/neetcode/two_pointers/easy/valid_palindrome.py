@@ -56,7 +56,7 @@ def isPalindrome_two_pointers(s: str) -> bool:
 
     return True
 
-
 if __name__ == '__main__':
     s = "A man, a plan, a canal: Panama"
     print(isPalindrome_two_pointers(s))
+
