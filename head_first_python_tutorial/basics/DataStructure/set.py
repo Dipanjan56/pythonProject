@@ -34,6 +34,74 @@ print(f'set using shorthand: {s3}')
 
 # -----------------------------------------
 
+# 1. Add values in set
+my_set = {1, 2, 3}
+print('before adding value: ', my_set)
+my_set.add(4)
+my_set.add(2)
+
+print('after adding value: ', my_set)
+
+# -----------------------------------------
+
+# 2. Remove values from set
+my_set = {1, 2, 3}
+print('before removing value: ', my_set)
+my_set.remove(1)
+
+print('after removing value: ', my_set)
+
+# -----------------------------------------
+
+# 3. Discard(element): Removes the specified element from the set, but does not raise an error if the element is not present.
+
+my_set = {1, 2, 3}
+my_set.discard(2)
+print(my_set)  # Output: {1, 3}
+
+my_set.discard(5)
+
+# -----------------------------------------
+
+# 4. pop(): Removes and returns a random element from the set. Raises a KeyError if the set is empty.
+my_set = {1, 2, 3}
+popped_element = my_set.pop()
+print(popped_element)  # Output: Random element from the set
+print(my_set)          # Output: Remaining elements
+
+# -----------------------------------------
+
+# 5. clear(): Removes all elements from the set, making it an empty set.
+my_set = {1, 2, 3}
+my_set.clear()
+print(my_set)  # Output: set()
+
+# -----------------------------------------
+
+# 6. update(iterable): Adds multiple elements to the set (can pass a list, tuple, or another set).
+
+my_set = {1, 2}
+my_set.update([3, 4, 5])
+print(my_set)  # Output: {1, 2, 3, 4, 5}
+
+# -----------------------------------------
+
+# 7.  issubset(set): Returns True if the set is a superset of another set (i.e., it contains all elements of the other set).
+
+set1 = {1, 2, 3}
+set2 = {1, 2}
+print(set1.issuperset(set2))  # Output: True
+
+# -----------------------------------------
+
+# 8. copy(): Returns a shallow copy of the set.
+set1 = {1, 2, 3}
+set_copy = set1.copy()
+print(set_copy)  # Output: {1, 2, 3}
+
+# -----------------------------------------
+
+
 # Convert list to set
 num_list = [9, 6, 1, 2, 3, 2, 5, 2, 4, 4, 7]
 num_set = set(num_list)
