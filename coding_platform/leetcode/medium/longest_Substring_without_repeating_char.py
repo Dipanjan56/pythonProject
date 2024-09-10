@@ -162,9 +162,8 @@ def lengthOfLongestSubstring_most_optimezed(s: str) -> int:
         while s[right] in char_list:
             char_list.remove(s[left])
             left += 1
-
         char_list.append(s[right])
-        max_len = max(max_len, right - left + 1)
+        max_len = max(max_len, len(char_list))
 
     return max_len
 
@@ -176,3 +175,4 @@ if __name__ == '__main__':
     print(lengthOfLongestSubstring_3(s1))
     print(lengthOfLongestSubstring_4(s1))
     print(lengthOfLongestSubstring_5(s1))
+    print(lengthOfLongestSubstring_most_optimezed(s1))
