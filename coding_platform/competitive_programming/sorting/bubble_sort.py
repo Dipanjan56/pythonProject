@@ -6,12 +6,11 @@ Time complexity is c * (n-1) * (n-1) ~= O(n2)
 
 
 def bubble_sort(nums: List[int]) -> List[int]:
-    length = len(nums)
-    for i in range(length - 1):
+    for i in range( len(nums) - 1):
         swapped = False
         # this is because after every iteration [i] the largest element will be placed at the last of the array
         # that is why we are keeping range as length - i -1
-        for j in range(0, length - i - 1):
+        for j in range( len(nums) - i - 1):
             if nums[j] > nums[j + 1]:
                 nums[j], nums[j + 1] = nums[j + 1], nums[j]
                 swapped = True

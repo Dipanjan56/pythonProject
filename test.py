@@ -75,15 +75,19 @@ def insertion_sort(nums: List[int]):
     return nums
 
 
-def bubble_sort(nums: List[int]):
-    swapped = False
-    for i in range(len(nums)):
-        for j in range(i + 1, len(nums) - i - 1):
+def bubble_sort(nums: List[int]) -> List[int]:
+    length = len(nums)
+    for i in range(length - 1):
+        swapped = False
+        # this is because after every iteration [i] the largest element will be placed at the last of the array
+        # that is why we are keeping range as length - i -1
+        for j in range(length - i - 1):
             if nums[j] > nums[j + 1]:
                 nums[j], nums[j + 1] = nums[j + 1], nums[j]
                 swapped = True
         if not swapped:
             return nums
+    return nums
 
 
 def merge_sort(nums: List[int]):
@@ -94,7 +98,9 @@ def merge_sort(nums: List[int]):
         merge_sort(left_nums)
         merge_sort(right_nums)
 
-        i = j = k = 0
+        i = 0
+        j = 0
+        k = 0
 
         while i < len(left_nums) and j < len(right_nums):
             if left_nums[i] < right_nums[j]:
@@ -114,7 +120,6 @@ def merge_sort(nums: List[int]):
             nums[k] = right_nums[j]
             j += 1
             k += 1
-
     return nums
 
 
