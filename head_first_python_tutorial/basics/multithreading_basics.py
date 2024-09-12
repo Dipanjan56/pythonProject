@@ -30,7 +30,6 @@ from threading import Thread
 from time import sleep
 
 
-
 def do_some_work():
     t = Thread(target=execute_slowely, args=(10, 20, 30))
     t.start()
@@ -40,6 +39,7 @@ def do_some_work():
 def execute_slowely(a, b, c):
     sleep(10)
     print(a, b, c)
+
 
 if __name__ == '__main__':
     do_some_work()

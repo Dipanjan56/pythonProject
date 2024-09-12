@@ -27,18 +27,24 @@ s consists of English letters, digits, symbols and spaces."""
 from collections import Counter
 from pprint import pprint
 
+"""
+as set() is hashable so data retrival will take O(1), j=hence time complexity is : O(n) [due to the outer for loop]
 
+"""
 def lengthOfLongestSubstring(s: str) -> int:
     left = 0
     max_len = 0
-    char_list = []
+    char_set = set()
 
     for right in range(len(s)):
-        while s[right] in char_list:
-            char_list.remove(s[left])
+        # If there's a duplicate character, shrink the window from the left
+        while s[right] in char_set:
+            char_set.remove(s[left])
             left += 1
-        char_list.append(s[right])
-        max_len = max(max_len, len(char_list))
+        # Add the current character to the set
+        char_set.add(s[right])
+        # Update the maximum length of the substring
+        max_len = max(max_len, right - left + 1)
 
     return max_len
 

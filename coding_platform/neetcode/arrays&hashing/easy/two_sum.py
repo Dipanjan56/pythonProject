@@ -30,7 +30,11 @@ def twoSum_using_list_slicing(nums: List[int], target: int) -> List[int]:
         if diff in nums[i + 1:]:
             return [i, nums[i + 1:].index(diff) + i + 1]
 
+"""
+Here we sue set , as data retrieval in set is done by O(1) as set is hashable
 
+Thats why Time complexity: O(n)
+"""
 def twoSum_using_dictionary(nums: List[int], target: int) -> List[int]:
     seen = {}
 

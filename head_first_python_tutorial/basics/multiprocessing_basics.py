@@ -1,6 +1,3 @@
-import multiprocessing
-import time
-
 """
 
 Multiprocessing in Python
@@ -45,6 +42,10 @@ p2.join()
 As a result, the current program will first wait for the completion of p1 and then p2. 
 Once, they are completed, the next statements of current program are executed.
 """
+
+import multiprocessing
+import time
+
 
 def print_cube(num):
     """

@@ -92,13 +92,24 @@ web services. REST APIs use HTTP methods to interact with resources (data) on a 
 
 #### 6. **HTTP Status Codes**
    - **Status codes** indicate the result of an HTTP request. Some common codes include:
-     - **200 OK**: The request was successful.
-     - **201 Created**: A resource was successfully created.
-     - **204 No Content**: The request was successful but there is no response body (often after DELETE).
-     - **400 Bad Request**: The request was invalid or malformed.
-     - **401 Unauthorized**: Authentication failed or is required.
-     - **404 Not Found**: The requested resource does not exist.
-     - **500 Internal Server Error**: The server encountered an error.
+    •	200 OK: The request was successful.
+	•	201 Created: The request was successful and a new resource was created.
+	•	202 Accepted: The request has been accepted for processing but is not yet complete.
+	•	204 No Content: The request was successful, but no content is being returned.
+	•	301 Moved Permanently: The resource has been permanently moved to a new URL.
+	•	302 Found: The resource is temporarily located at a different URL.
+	•	304 Not Modified: The resource has not been modified since the last request.
+	•	400 Bad Request: The server could not understand the request due to invalid syntax.
+	•	401 Unauthorized: Authentication is required to access the resource.
+	•	403 Forbidden: The server understood the request but refuses to authorize it.
+	•	404 Not Found: The requested resource could not be found.
+	•	405 Method Not Allowed: The HTTP method is not allowed for the requested resource.
+	•	409 Conflict: The request could not be completed due to a conflict with the current state of the resource.
+	•	429 Too Many Requests: The user has sent too many requests in a given amount of time.
+	•	500 Internal Server Error: The server encountered an unexpected condition that prevented it from fulfilling the request.
+	•	502 Bad Gateway: The server received an invalid response from the upstream server.
+	•	503 Service Unavailable: The server is temporarily unable to handle the request, often due to maintenance.
+	•	504 Gateway Timeout: The server did not receive a timely response from an upstream server.
 
 ---
 

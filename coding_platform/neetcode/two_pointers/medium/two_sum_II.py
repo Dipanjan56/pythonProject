@@ -6,12 +6,7 @@ Return the indices (1-indexed) of two numbers, [index1, index2], such that they 
 
 There will always be exactly one valid solution.
 
-Your solution must use 
-O
-(
-1
-)
-O(1) additional space.
+Your solution must use O(1) additional space.
 
 Example 1:
 
