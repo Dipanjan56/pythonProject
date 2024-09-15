@@ -31,8 +31,8 @@ Constraints:
 from typing import List
 import math
 
-"""using two pointers approach
-Time Complexity is O(n^2)
+"""
+Time Complexity is O(n)
 """
 def maxProfit(prices: List[int]) -> int:
     max_profit = 0

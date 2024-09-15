@@ -141,7 +141,7 @@ def zip_for_loop():
     for player, score in zip(players, scores):
         print("{} scored {}".format(player, score))
 
-# using combinations: print the difference if two numbers in a list of all combinations
+# using combinations: print the difference of two numbers in a list of all combinations
 def combinations_for_loop():
     nums = [1,2,3,4,5,7,8]
     for a,b in combinations(nums, 2):
