@@ -11,32 +11,32 @@
 from typing import List
 
 
-def binary_search_recursion(arr: List[int], start, end, target):
-    mid = (start + end) // 2
+def binary_search_recursion(arr: List[int], left, right, target):
+    mid = (left + right) // 2
 
     if target == arr[mid]:
         return mid
     elif target < arr[mid]:
-        return binary_search_recursion(arr, start, mid - 1, target)
+        return binary_search_recursion(arr, left, mid - 1, target)
     elif target > arr[mid]:
-        return binary_search_recursion(arr, mid + 1, end, target)
+        return binary_search_recursion(arr, mid + 1, right, target)
     else:
         return -1
 
 
 def binary_search_iteration(arr: List[int], target):
-    start = 0
-    end = len(arr) - 1
+    left = 0
+    right = len(arr) - 1
 
-    while start <= end:
-        mid = (start + end) // 2
+    while left <= right:
+        mid = (left + right) // 2
 
         if target == arr[mid]:
             return mid
         elif target < arr[mid]:
-            end = mid - 1
+            right = mid - 1
         elif target > arr[mid]:
-            start = mid + 1
+            left = mid + 1
     return -1
 
 

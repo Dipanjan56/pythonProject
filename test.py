@@ -36,32 +36,32 @@ def check_prime(num: int) -> bool:
     return True
 
 
-def binary_search_recursion(nums: List[int], start, end, target):
-    mid = (start + end) // 2
+def binary_search_recursion(nums: List[int], left, right, target):
+    mid = (left + right) // 2
 
     if target == nums[mid]:
         return mid
     elif target < nums[mid]:
         return binary_search_recursion(nums, 0, mid - 1, target)
     elif target > nums[mid]:
-        return binary_search_recursion(nums, mid + 1, end, target)
+        return binary_search_recursion(nums, mid + 1, right, target)
     else:
         return -1
 
 
 def binary_search_iteration(nums: List[int], target):
-    start = 0
-    end = len(nums) - 1
+    left = 0
+    right = len(nums) - 1
 
-    while start <= end:
-        mid = (start + end) // 2
+    while left <= right:
+        mid = (left + right) // 2
 
         if target == nums[mid]:
             return mid
         elif target < nums[mid]:
-            end = mid - 1
+            right = mid - 1
         elif target > nums[mid]:
-            start = mid + 1
+            left = mid + 1
         else:
             return -1
 

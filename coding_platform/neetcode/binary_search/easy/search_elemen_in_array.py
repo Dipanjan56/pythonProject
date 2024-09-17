@@ -1,7 +1,7 @@
 """Binary Search"""
 
 """
-You are given an array of distinct integers nums, sorted in ascending order, and an integer target.
+You are given an array of distinct integers nums, sorted in ascrighting order, and an integer target.
 
 Implement a function to search for target within nums. If it exists, then return its index, otherwise, return -1.
 
@@ -38,18 +38,18 @@ from typing import List
 
 
 def search(nums: List[int], target: int) -> int:
-    start = 0
-    end = len(nums) - 1
+    left = 0
+    right = len(nums) - 1
 
-    while start <= end:
-        mid = (start + end) // 2
+    while left <= right:
+        mid = (left + right) // 2
 
         if target == nums[mid]:
             return mid
         elif target < nums[mid]:
-            end = mid - 1
+            right = mid - 1
         else:
-            start = mid + 1
+            left = mid + 1
 
     return -1
 
