@@ -60,6 +60,19 @@ def twoSum_usingSet(nums: List[int], target: int) -> List[int]:
             else:
                 seen_set.add(num)
 
+"""
+Note:
+
+Drawback of Using a Set:
+
+	The nums.index(complement) function call to retrieve the index of the complement has a time complexity of O(n), 
+	which makes this solution slightly less efficient than using a dictionary for this problem. However, if you don’t 
+	need to worry about index retrieval or if you’re focused on the simplicity of using a set, this approach works fine.
+
+    If you’re looking for a more optimal solution, using a dictionary (hash map) would be the preferred approach as 
+    discussed previously, as it allows direct retrieval of indices in constant time.
+"""
+
 
 if __name__ == '__main__':
     nums = [3, 4, 5, 6]
