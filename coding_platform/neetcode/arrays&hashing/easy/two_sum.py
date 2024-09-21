@@ -23,7 +23,9 @@ s and t consist of lowercase English letters.
 from collections import Counter
 from typing import List
 
-
+"""
+Time complexity: O(n^2)
+"""
 def twoSum_using_list_slicing(nums: List[int], target: int) -> List[int]:
     for i in range(len(nums) - 1):
         diff = target - nums[i]
@@ -31,22 +33,37 @@ def twoSum_using_list_slicing(nums: List[int], target: int) -> List[int]:
             return [i, nums[i + 1:].index(diff) + i + 1]
 
 """
-Here we sue set , as data retrieval in set is done by O(1) as set is hashable
-
-Thats why Time complexity: O(n)
+Here we use dict , as data retrieval in dictionary is done by O(1) as dict is hashable
+That's why Time complexity: O(n)
 """
-def twoSum_using_dictionary(nums: List[int], target: int) -> List[int]:
-    seen = {}
+def twoSum_usingDictionary(nums: List[int], target: int) -> List[int]:
+    seen_dict = {}
 
     for index, num in enumerate(nums):
         diff = target - num
-        if diff in seen:
-            return [seen[diff], index]
-        seen[num] = index
+        if diff in seen_dict:
+            return [seen_dict[diff], index]
+        seen_dict[num] = index
+
+
+"""
+Here we use set , as data retrieval in set is done by O(1) as set is hashable
+That's why Time complexity: O(n)
+"""
+def twoSum_usingSet(nums: List[int], target: int) -> List[int]:
+        seen_set = set()
+
+        for i, num in enumerate(nums):
+            diff = target - num
+            if diff in seen_set:
+                return [nums.index(diff), i]
+            else:
+                seen_set.add(num)
 
 
 if __name__ == '__main__':
     nums = [3, 4, 5, 6]
     target = 7
     print(twoSum_using_list_slicing(nums, target))
-    print(twoSum_using_dictionary(nums, target))
+    print(twoSum_usingDictionary(nums, target))
+    print(twoSum_usingSet(nums, target))
