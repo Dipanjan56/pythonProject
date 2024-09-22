@@ -56,7 +56,13 @@ def isPalindrome_two_pointers(s: str) -> bool:
 
     return True
 
+
+def isPalindrome(s: str) -> bool:
+    s_alnum = ''.join([char.lower() for char in s if char.isalnum()])
+    return s_alnum == s_alnum[::-1]
+
+
 if __name__ == '__main__':
     s = "A man, a plan, a canal: Panama"
     print(isPalindrome_two_pointers(s))
-
+    print(isPalindrome(s))
