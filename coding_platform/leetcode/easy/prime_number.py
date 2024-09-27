@@ -6,7 +6,7 @@ def check_prime(num: int) -> bool:
         return True
     if num == 0 or num == 1 or num % 2 == 0:
         return False
-    for i in range(3, int(math.sqrt(num)), 2):
+    for i in range(3, int(math.sqrt(num))+1, 2):
         if num % i == 0:
             return False
     return True

@@ -30,7 +30,7 @@ def check_prime(num: int) -> bool:
     elif num == 0 or num == 1 or num % 2 == 0:
         return False
     else:
-        for i in range(3, int(math.sqrt(num)), 2):
+        for i in range(3, int(math.sqrt(num))+1, 2):
             if num % i == 0:
                 return False
     return True
