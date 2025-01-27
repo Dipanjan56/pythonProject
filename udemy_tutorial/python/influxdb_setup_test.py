@@ -6,9 +6,9 @@ import time
 from influxdb_client import Point
 from influxdb_client.client.write_api import SYNCHRONOUS
 
-url = "http://influxdb2.devops-eks.mindtickle.com"
-token = "-ZDWNJKA_bJP2lPfeHmRYBKjU6Klqna8X4YhX6ZesbuKatBo3OHJXCwmji2vH999JxBMFVhQzATrSW4mwwZSww=="
-org = "Mindtickle"
+url = "influxdb url"
+token = "influxdb token"
+org = "Org name"
 client = influxdb_client.InfluxDBClient(url=url, token=token, org=org)
 print(f"Ping Response: {client.ping()}")
 source_bucket = "test_bucket"
