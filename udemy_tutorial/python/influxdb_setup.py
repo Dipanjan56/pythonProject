@@ -18,8 +18,6 @@ from influxdb_client.client.write_api import SYNCHRONOUS
 url = "infuxdb url"
 token = "your token"
 org = "Your Org"
-# client = influxdb_client.InfluxDBClient(url="http://influxdb2.devops-eks.mindtickle.com",
-#                                         token="-ZDWNJKA_bJP2lPfeHmRYBKjU6Klqna8X4YhX6ZesbuKatBo3OHJXCwmji2vH999JxBMFVhQzATrSW4mwwZSww==", org="Mindtickle")
 client = influxdb_client.InfluxDBClient(url=url, token=token, org=org)
 print(f"Ping Response: {client.ping()}")
 bucket = "test_bucket"
