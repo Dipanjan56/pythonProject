@@ -1,5 +1,5 @@
 """"""
-from typing import List
+from typing import List, Any
 
 """
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -38,19 +38,24 @@ Constraints:
 """
 
 
-def two_sum_1(nums: List[int], target: int) -> List[int]:
+def two_sum_1(nums: List[int], target: int) -> list[int] | None:
     for i in range(len(nums) - 1):
         for j in range(i + 1, len(nums)):
             if nums[i] + nums[j] == target:
                 return [i, j]
+            return None
+        return None
+    return None
 
 
-def two_sum_2(nums: List[int], target: int) -> List[int]:
+def two_sum_2(nums: List[int], target: int) -> list[int] | None:
     for i in range(len(nums) - 1):
         diff = target - nums[i]
         if diff in nums[i + 1:]:
             diff_index = nums[i + 1:].index(diff) + i + 1
             return [i, diff_index]
+        return None
+    return None
 
 
 """
@@ -60,13 +65,15 @@ explanatory video: https://www.youtube.com/watch?v=luicuNOBTAI
 """
 
 
-def two_sum_3(nums: List[int], target: int) -> List[int]:
+def two_sum_3(nums: List[int], target: int) -> list[int | Any] | None:
     seen = {}
     for i in range(len(nums)):
         diff = target - nums[i]
         if diff in seen.keys():
             return [seen[diff], i]
         seen[nums[i]] = i
+        return None
+    return None
 
 
 if __name__ == '__main__':
