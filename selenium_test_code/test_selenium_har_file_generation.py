@@ -1,7 +1,9 @@
+import os
 import time
+from datetime import datetime
 
 from selenium.common import NoSuchElementException, TimeoutException
-from seleniumwire import webdriver  # <-- use seleniumwire
+from seleniumwire import webdriver
 from selenium.webdriver import Keys
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
@@ -114,12 +116,14 @@ def test_microsoft_copilot():
     driver.implicitly_wait(10)
 
     message_copilot = driver.find_element(By.ID, 'userInput')
-    message_copilot.send_keys('What is the weather today?')
+    message_copilot.send_keys('What the capital of India?')
     message_copilot.send_keys(Keys.ENTER)
 
     copilot_said = wait_and_get_element(driver, By.XPATH, "//div/h2[text()='Copilot said']", 10)
+    ai_message = wait_and_get_element(driver, By.CSS_SELECTOR, "[data-content='ai-message'] .break-words")
+    end_suggestions = wait_and_get_element(driver, By.CSS_SELECTOR, ".mt-auto div")
 
-    if copilot_said:
+    if copilot_said and ai_message and end_suggestions:
         print("✅ Copilot Answered")
     else:
         print("❌ Copilot response not detected")
@@ -128,8 +132,17 @@ def test_microsoft_copilot():
     total_duration = round(end_time - start_time, 2)
     print(f"\n⏱️ Total time taken: {total_duration} seconds.")
 
-    save_har_file(driver,
-                  "/Users/dkundu/projects/personal_projects/pythonProject/selenium_test_code/har_files/microsoft_copilot_activity.har")
+    # Format HAR file name as microsoft_copilot_activity_21_May_11_56_09.har
+    now = datetime.now()
+    formatted_time = now.strftime("%d_%b_%H_%M_%S")
+    har_file_name = f"microsoft_copilot_activity_{formatted_time}.har"
+    har_folder_name = "har_files"
+
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    har_path = os.path.join(current_dir, har_folder_name, har_file_name)
+    os.makedirs(os.path.dirname(har_path), exist_ok=True)
+
+    save_har_file(driver, har_path)
 
     driver.quit()
 

@@ -69,5 +69,5 @@ def load_and_replay_har(filename: str, filter_domain: str = "copilot.microsoft.c
 
 
 if __name__ == '__main__':
-    har_file_path = '/Users/dkundu/projects/personal_projects/pythonProject/selenium_test_code/har_files/microsoft_copilot_activity.har'
+    har_file_path = '/selenium_test_code/har_files/microsoft_copilot_activity_1.har'
     load_and_replay_har(har_file_path, print_response=False)
