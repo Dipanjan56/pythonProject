@@ -1,23 +1,38 @@
 """Two Sum"""
 """
-Given two strings s and t, return true if the two strings are anagrams of each other, otherwise return false.
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
-An anagram is a string that contains the exact same characters as another string, but the order of the characters can be different.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+
+ 
 
 Example 1:
 
-Input: s = "racecar", t = "carrace"
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 
-Output: true
 Example 2:
 
-Input: s = "jar", t = "jam"
+Input: nums = [3,2,4], target = 6
+Output: [1,2]
 
-Output: false
+Example 3:
+
+Input: nums = [3,3], target = 6
+Output: [0,1]
+
+ 
+
 Constraints:
 
-s and t consist of lowercase English letters.
-
+    2 <= nums.length <= 104
+    -109 <= nums[i] <= 109
+    -109 <= target <= 109
+    Only one valid answer exists.
+    
 """
 
 from collections import Counter
